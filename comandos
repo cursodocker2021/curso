@@ -1,0 +1,29 @@
+Referência: https://www.jrebel.com/system/files/docker-commands-cheat-sheet.pdf
+
+docker --help
+docker info
+docker pull
+docker run
+docker images
+docker ps
+docker ps-a
+docker exec
+docker stop
+docker start
+docker rm
+docker rmi
+docker attach
+docker cp
+
+Os parâmetros mais utilizados na execução do container são:
+
+Parâmetro /	Explicação
+-d	Execução do container em background
+-i	Modo interativo. Mantém o STDIN aberto mesmo sem console anexado
+-t	Aloca uma pseudo TTY
+--rm	Automaticamente remove o container após finalização (Não funciona com -d)
+--name	Nomear o container
+-v	Mapeamento de volume
+-p	Mapeamento de porta
+-m	Limitar o uso de memória RAM
+-c	Balancear o uso de CPU
