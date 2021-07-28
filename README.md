@@ -95,11 +95,16 @@ O volume também resolve questões de persistência de dados, pois as informaç�
 
 - Tipos de mount:
     - Bind = As montagens bind são basicamente fazer um vinculo de um determinado diretório ou arquivo do host para dentro do container.
-    - Exemplo: docker run -v /<diretório_no_servidor>:/<diretório_no_container> ubuntu
+        - Exemplos de montagem bind (bind mount): 
+        - docker run -v /<diretório_no_servidor>:/<diretório_no_container> ubuntu
+        - docker run -dti --mount type=bind,src=/opt/teste,dst=/teste debian
+        - docker run -dti --mount type=bind,src=/opt/teste,dst=/teste,ro debian (o parâmetro "ro" define que este bind será Read-Only)
 
     - Named = Volumes nomeados são volumes que você cria manualmente com o comando "docker volume create <nome_do_volume>", eles são criados no diretório padrão do docker /var/lib/docker/volumes e podem ser referenciados apenas por nome.
-    - Exemplo de criação do volume: docker volume create <nome_do_volume>
-    - Exemplo de subida de um container com o volume: docker run -v <nome_do_volume_criado>:/<diretório_no_container> ubuntu
+        - Exemplo de criação do volume: docker volume create <nome_do_volume>
+        - Exemplo de montagem de volumes
+        - docker run -v <nome_do_volume_criado>:/<diretório_no_container> ubuntu (Para volumes Docker apenas)
+        - docker run -dti --mount type=volume,src=teste,dst=teste debian (Para volumes Docker ou do Filesystem)
 
     - Dockerfile volume = Tipo de volume que é criado pela instrução VOLUME no Dockerfile, esses volumes também são criados em /var/lib/docker/volumes, mas não têm um determinado nome. O volume é criado ao executar o container e são úteis para salvar dados persistentes. O desenvolvedor pode dizer onde estão os dados importantes e o que deve ser persistente.
 
