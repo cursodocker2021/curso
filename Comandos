@@ -4,25 +4,22 @@ Referência para comandos mais usados no Docker: https://www.jrebel.com/system/f
 
 Comandos mais usados na gerência de container no modo interativo do Docker:
 
-docker --help
-docker info
-docker pull
-docker run
-docker images
-docker ps
-docker ps-a
-docker exec
-docker stop
-docker start
-docker rm
-docker rmi
-docker attach
-docker cp
-docker inspect
-docker logs
-
-Referência oficial dos comandos base do Docker com a explicação de cada um deles:
-- https://docs.docker.com/engine/reference/commandline/cli/
+docker --help = Comando usado para retornar os comandos do docker, para retornar parâmetros de algum comando específico, basta executar o comando "docker <comando> --help, exemplo: docker run --help
+docker info = Retorna informações da configuração do docker instalado
+docker pull = Realiza download de imagens, lembrando caso não especifique uma tag, o comando irá baixar a imagem mais recente (latest), caso queira alguma tag específica, basta executar o comando neste formato: docker pull <nome da imagem>:<tag>
+docker run = Executar/subir um container (parâmetros mais usados estão mais abaixo neste documento)
+docker images = Retorna as imagens já baixadas
+docker ps = Retorna os containers em execução
+docker ps-a = Retorna os containers em execução ou que já tenham sido executados/criados
+docker exec = Executa comandos no container sem precisar entrar no mesmo
+docker stop = Para um container
+docker start = Inicia um container
+docker rm = Remove um container
+docker rmi = Remove uma imagem
+docker attach = Se atacha a um container, possibilitando executar comandos dentro do mesmo, OBS: não saia do container com "exit", pressione CTRL+pq para que o container não seja parado
+docker cp = Copiar arquivos do container ou para o container
+docker inspect = Reupera informações detalhadas de um container, imagem
+docker logs = Retorna os logs de execução de um container
 
 Os parâmetros mais utilizados na execução do container são:
 
@@ -37,7 +34,13 @@ Parâmetro /	Explicação
 -m	Limitar o uso de memória RAM
 -c	Balancear o uso de CPU
 
+Exemplo de uso de parãmetros: docker run -dti ubuntu (executa um container no modo background e de forma interativa usando a imagem Ubuntu)
+
+
+Referência oficial dos comandos base do Docker com a explicação de cada um deles:
+https://docs.docker.com/engine/reference/commandline/cli/
+
 ---
 
 Referências para avançar no curso e no uso do Docker:
-- https://github.com/cursodocker2021/curso/blob/main/Referencia
+https://github.com/cursodocker2021/curso/blob/main/Referencia
