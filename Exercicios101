@@ -50,7 +50,7 @@ Execute o comando para executar comandos no container, mas desta vez, execute o 
 Exercício 8:
 Exclua o container WEBSERVER1;
 Crie um novo container que rode em modo background e de forma interativa, que se chame WSPROD, mapeie a porta 8080 externa para a porta 80 interna e utilize a imagem httpd com a tag alpine3.14
-Execute o comando "docker inspect WEBSERVER1" para buscar as informações de configuração do container, procure pelo "IPAddress";
+Execute o comando "docker inspect WSPROD" para buscar as informações de configuração do container, procure pelo "IPAddress";
 Execute o comando Linux "curl -l <IP que você achou>:8080 e veja o que acontece;
 Execute o comando Linux "ip a" e encontre o IP da placa de rede do servidor (eth0), insira este IP junto com a porta <IP:8080> no seu navegador e verifique o resultado;
 
