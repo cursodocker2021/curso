@@ -2,7 +2,7 @@ Referência para comandos mais usados no Docker: https://www.jrebel.com/system/f
 
 ---
 
-Comandos mais usados na gerência de container no modo interativo do Docker:
+Comandos mais usados na gerência de container e imagem no modo interativo do Docker:
 
 docker --help = Comando usado para retornar os comandos do docker, para retornar parâmetros de algum comando específico, basta executar o comando "docker <comando> --help, exemplo: docker run --help
 docker info = Retorna informações da configuração do docker instalado
@@ -21,7 +21,6 @@ docker cp = Copiar arquivos do container ou para o container
 docker inspect = Reupera informações detalhadas de um container, imagem
 docker logs = Retorna os logs de execução de um container
 docker rm -f <nome_do_container> = Força a exclusão do container sem precisar parar antes de excluir
-docker volume prune = Exclui todos os volumes que não estão em uso
 docker container prune = Exclui todos os container parados
 
 Os parâmetros mais utilizados na execução do container são:
@@ -39,6 +38,12 @@ Parâmetro /	Explicação
 
 Exemplo de uso de parãmetros: docker run -dti ubuntu (executa um container no modo background e de forma interativa usando a imagem Ubuntu)
 
+Comandos mais usados para gerenciar volumes:
+
+docker volume create <nome_do_volume> = Criar um volume Docker
+docker volume ls = Listar os volumes Docker
+docker volume rm <nome_do_volume> = Excluir volume Docker
+docker volume prune = Exclui todos os volumes que não estão em uso
 
 Referência oficial dos comandos base do Docker com a explicação de cada um deles:
 https://docs.docker.com/engine/reference/commandline/cli/
