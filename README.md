@@ -98,7 +98,7 @@ Figura 2. Arquitetura do Docker
 O Docker engine pode ser instalado nativamente no Linux ou no sistema operacional Windows atráves da feature WSL.
 Para ambientes de laboratório, pode ser usada a opção de instalação chamada Docker Desktop.
 
-- https://docs.docker.com/engine/install/
+- https://github.com/cursodocker2021/curso/blob/main/Instalacao
 
 ---
 
