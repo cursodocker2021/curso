@@ -1,0 +1,75 @@
+--Lista de exercícios iniciais--
+
+Exercício 1:
+Execute o seguinte comando para extrair informações sobre a instalação do docker no seu servidor:
+docker info
+
+Leia a descrição para que futuramente se necessitar de alguma informação, saiba onde buscar.
+Neste mesmo resultado, procure pelo "Docker Root Dir", copie o valor e com o comando "cd" abra este diretório e explore o conteúdo.
+
+Exercício 2:
+Execute o seguinte comando para acessar os comandos disponíveis no Docker:
+docker --help
+
+Lembrando que se precisar acessar detalhes de algum comando especifico, execute neste formado: docker <comando> --help, exemplo: docker run --help
+Você utilizará estes comandos nos próximos exercícios, caso precise de mais informações, acesse: https://github.com/cursodocker2021/curso/blob/main/Comandos
+
+Exercício 3:
+Entre no site hub.docker.com e procure pela imagem oficial do ubuntu;
+Realize o download da imagem do ubuntu;
+Complete o seguinte comando para rodar um novo container com a imagem que você baixou:
+docker <comando para levantar um container> ubuntu
+
+Exercício 4:
+Execute o comando para listar os containers que já foram executados ou estão em execução no momento;
+Execute o comando para listar as imagens que já foram baixadas;
+Exclua o container que foi criado antes;
+Exclua a imagem do ubuntu usando o id da imagem;
+
+Exercício 5:
+Execute o comando para subir um novo container usando a imagem httpd mas que rode em background e de forma interativa, aproveite para atribuir o nome de WEBSERVER1 para ele;
+Execute o comando "docker ps" para visualizar o container criado e que esta em execução;
+Execute o comando para parar este container, logo depois inicie ele novamente;
+
+Exercício 6:
+Execute o seguinte comando para executar um bash interativo no container WEBSERVER1;
+docker exec -ti WEBSERVER1 /bin/bash
+Crie uma pasta chamada app01 no / do container;
+Crie um arquivo chamada teste.txt dentro do /
+Saia do container;
+Execute o comando para executar comandos no container, mas desta vez, execute o comando Linux "ls /"
+Execute o comando para executar comandos no container, mas desta vez, execute o comando Linux "ls /app01"
+
+Exercício 7:
+Crie um diretório chamado app-dev no / do seu servidor;
+Crie um arquivo chamado webconfig.cfg no /app-dev do seu servidor/
+Crie uma pasta usando o comando exec, chamada app-dev-docker dentro do / do container WEBSERVER1;
+Copie o arquivo webconfig.cfg para dentro da pasta app-dev-docker do container WEBSERVER1;
+Execute o comando para executar comandos no container, mas desta vez, execute o comando Linux "ls /app-dev-docker"
+
+Exercício 8:
+Exclua o container WEBSERVER1;
+Crie um novo container que rode em modo background e de forma interativa, que se chame WSPROD, mapeie a porta 8080 externa para a porta 80 interna e utilize a imagem httpd com a tag alpine3.14
+Execute o comando "docker inspect WEBSERVER1" para buscar as informações de configuração do container, procure pelo "IPAddress";
+Execute o comando Linux "curl -l <IP que você achou>:8080 e veja o que acontece;
+Execute o comando Linux "ip a" e encontre o IP da placa de rede do servidor (eth0), insira este IP junto com a porta <IP:8080> no seu navegador e verifique o resultado;
+
+Exercício 9:
+Execute o comando "docker logs WSPROD" para pegar os logs do container;
+Execute o comando para parar o container WSPROD;
+Exclua o container WSPROD;
+Exclua todas as imagens existentes;
+
+Exercício 10:
+Execute o comando para subir um novo container usando a imagem ubuntu mas que rode em background e de forma interativa, aproveite para atribuir o nome de PERFTEST para ele;
+Execute o seguinte comando e procure pelo comando para mostrar em tempo real o uso de recursos do host pelos containers:
+docker --help
+Execute o comando que você encontrou e observe o uso de CPU e memória, assim como o limite atual de uso, pressione CTRL+C para sair desta visualização;
+Execute o comando para subir um novo container usando a imagem ubuntu mas que rode em background e de forma interativa, adicione o parâmetro -m 128M (para limitar o uso de memória em 128MB) e o parâmetro -c 1 (para limitar o uso de CPU em 10% do CPU total do host) aproveite para atribuir o nome de PERFTEST2 para ele;
+Se algum erro ocorrer, leia e tente resolver o problema
+Após resolver o problema e subir o container, execute o comando que você usou para observar o uso de CPU e memória novamente, verifique o que mudou nos limites, pressione CTRL+C para sair desta visualização;
+
+Finalize os exercícios parando e deletando todos os containers.
+
+
+Labs abertos para treinar mais (Necessário criar conta no hub.docker.com para utilizar): https://training.play-with-docker.com/
