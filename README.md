@@ -74,6 +74,35 @@ Esta imagem é representada por um ou mais arquivos e pode ser armazenada em um 
 O Docker utiliza file systems especiais para otimizar o uso, transferência e armazenamento das imagens, containers e volumes.
 
 O principal é o AUFS, que armazena os dados em camadas sobrepostas, e somente a camada mais recente é gravável.
+
+AUFS é um unification filesystem. É responsável por gerenciar múltiplos diretórios, empilhá-los uns sobre os outros e fornecer uma única e unificada visão, como se todos juntos fossem apenas um diretório.
+
+Esse único diretório é utilizado para apresentar o container e funciona como se fosse um único sistema de arquivos comum. Cada diretório usado na pilha corresponde a uma camada. E, é dessa forma que o Docker as unifica e proporciona a reutilização entre containeres. Pois, o mesmo diretório correspondente à imagem pode ser montado em várias pilhas de vários containeres.
+
+Com exceção da pasta (camada) correspondente ao container, todas as outras são montadas com permissão de somente leitura, caso contrário as mudanças de um container poderiam interferir em outro. O que, de fato, é totalmente contra os princípios do Linux Container.
+
+Caso seja necessário modificar um arquivo nas camadas (pastas) referentes às imagens, se utiliza a tecnologia Copy-on-write (CoW), responsável por copiar o arquivo para a pasta (camada) do container e fazer todas as modificações nesse nível. Dessa forma, o arquivo original da camada inferior é sobreposto nessa pilha, ou seja, o container em questão sempre verá apenas os arquivos das camadas mais altas.
+
+- Problema com performance
+
+O Docker tira proveito da tecnologia Copy-on-write (CoW) do AUFS para permitir o compartilhamento de imagem e minimizar o uso de espaço em disco. AUFS funciona no nível de arquivo. Isto significa que todas as operações AUFS CoW copiarão arquivos inteiros, mesmo que, apenas pequena parte do arquivo esteja sendo modificada. Esse comportamento pode ter impacto notável no desempenho do container, especialmente se os arquivos copiados são grandes e estão localizados abaixo de várias camadas de imagens. Nesse caso o procedimento copy-on-write dedicará muito tempo para uma cópia interna.
+
+- Volume como solução para performance
+
+Ao utilizar volumes, o Docker monta essa pasta (camada) no nível imediatamente inferior ao do container, o que permite o acesso rápido de todo dado armazenado nessa camada (pasta), resolvendo o problema de performance.
+
+O volume também resolve questões de persistência de dados, pois as informações armazenadas na camada (pasta) do container são perdidas ao remover o container, ou seja, ao utilizar volumes temos maior garantia no armazenamento desses dados.
+
+- Tipos de mount:
+    - Bind = As montagens bind são basicamente fazer um vinculo de um determinado diretório ou arquivo do host para dentro do container.
+    - Exemplo: docker run -v /<diretório_no_servidor>:/<diretório_no_container> ubuntu
+
+    - Named = Volumes nomeados são volumes que você cria manualmente com o comando "docker volume create <nome_do_volume>", eles são criados no diretório padrão do docker /var/lib/docker/volumes e podem ser referenciados apenas por nome.
+    - Exemplo de criação do volume: docker volume create <nome_do_volume>
+    - Exemplo de subida de um container com o volume: docker run -v <nome_do_volume_criado>:/<diretório_no_container> ubuntu
+
+    - Dockerfile volume = Tipo de volume que é criado pela instrução VOLUME no Dockerfile, esses volumes também são criados em /var/lib/docker/volumes, mas não têm um determinado nome. O volume é criado ao executar o container e são úteis para salvar dados persistentes. O desenvolvedor pode dizer onde estão os dados importantes e o que deve ser persistente.
+
 - https://pt.wikipedia.org/wiki/Aufs
 - https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/
 
