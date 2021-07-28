@@ -1,4 +1,8 @@
-Referência: https://www.jrebel.com/system/files/docker-commands-cheat-sheet.pdf
+Referência para comandos mais usados no Docker: https://www.jrebel.com/system/files/docker-commands-cheat-sheet.pdf
+
+---
+
+Comandos mais usados na gerência de container no modo interativo do Docker:
 
 docker --help
 docker info
@@ -14,6 +18,11 @@ docker rm
 docker rmi
 docker attach
 docker cp
+docker inspect
+docker logs
+
+Referência oficial dos comandos base do Docker com a explicação de cada um deles:
+- https://docs.docker.com/engine/reference/commandline/cli/
 
 Os parâmetros mais utilizados na execução do container são:
 
@@ -27,3 +36,8 @@ Parâmetro /	Explicação
 -p	Mapeamento de porta
 -m	Limitar o uso de memória RAM
 -c	Balancear o uso de CPU
+
+---
+
+Referências para avançar no curso e no uso do Docker:
+- https://github.com/cursodocker2021/curso/blob/main/Referencia
