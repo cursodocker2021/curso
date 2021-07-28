@@ -1,12 +1,6 @@
 # Curso de Docker
 
-## <a name="parte1">Seção: 1 - Introdução (5)</a>
-
-- [Outros materiais](https://github.com/cursodocker2021/curso)
-
-## <a name="parte2"> Seção: 2 - Conceitos (6)</a>
-
-#### 1.1. O que é Docker?
+#### O que é Docker?
 
 É uma ferramenta que se apoia em recursos existentes no kernel, inicialmente Linux, para isolar a execução de processos. As ferramentas que o Docker traz são basicamente uma camada de administração de containers, baseado originalmente no LXC.
 
@@ -27,7 +21,7 @@ Containers Docker empacotam componentes de software em um sistema de arquivos co
 
 Isto garante que o software sempre irá executar da mesma forma, independente do seu ambiente.
 
-#### 1.2. Por que não uma VM?
+#### Por que não uma VM?
 
 O Docker tende a utilizar menos recursos que uma VM tradicional, um dos motivos é não precisar de uma pilha completa como vemos em Comparação VMs × Containers. O Docker utiliza o mesmo
 kernel do host, e ainda pode compartilhar bibliotecas.
@@ -44,7 +38,7 @@ Devo trocar então minha VM por um container? Nem sempre, os containers Docker p
 - Todas as imagens são linux, apesar do host poder ser qualquer SO que use ou emule um kernel linux, as imagens em si serão baseadas em linux.
 - Não é possível usar um kernel diferente do host, o Docker Engine estará executando sob uma determinada versão (ou emulação) do kernel linux, e não é possível executar uma versão diferente, pois as imagens não possuem kernel.
 
-#### 1.3. O que são containers?
+#### O que são containers?
 
 Container é o nome dado para a segregação de processos no mesmo kernel, de forma que o processo seja isolado o máximo possível de todo o resto do ambiente.
 
@@ -56,7 +50,7 @@ Em termos práticos são File Systems, criados a partir de uma "imagem" e que po
 
 
 
-#### 1.4. O que são imagens Docker?
+#### O que são imagens Docker?
 
 Uma imagem Docker é a materialização de um modelo de um sistema de arquivos, modelo este produzido através de um processo chamado build.
 
@@ -71,7 +65,7 @@ O principal é o AUFS, que armazena os dados em camadas sobrepostas, e somente a
 - https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/
 
 
-#### 1.5. Arquitetura
+#### Arquitetura
 
 De maneira simplificada podemos dizer que o uso mais básico do Docker consiste em:
 - Ter o serviço Docker Engine rodando
@@ -84,7 +78,7 @@ De maneira simplificada podemos dizer que o uso mais básico do Docker consiste 
 Figura 2. Arquitetura do Docker
 
 
-#### 1.6. Crescimento do Docker
+#### Crescimento do Docker
 
 A primeira versão do Docker é de 13 de março de 2013, tendo um pouco mais de 4 anos (na epóca que este curso foi escrito).
 
@@ -95,9 +89,7 @@ Nestes 4 anos ele tem se tornado cada vez mais popular e uma solução real para
 ---
 
 
-## <a name="parte3"> Seção: 3 - Instalação (4)</a>
-
-#### 2.1. Docker Engine e Docker Machine
+#### Instalação do Docker Engine e Docker Machine
 
 - Instalação (Linux, Microsoft Windows e MacOS)
 - Uso do Docker Machine
@@ -108,13 +100,11 @@ Nestes 4 anos ele tem se tornado cada vez mais popular e uma solução real para
 ---
 
 
-## <a name="parte4"> Seção: 4 - Uso Básico do Docker (14)</a>
-
-#### 3.1. Introdução ao Docker Client
+#### Introdução ao Docker Client
 
 Conforme vimos em Arquitetura, o Docker Engine expõe uma API Rest que pode ser consumida pelas mais diversas ferramentas. A ferramenta inicial fornecida com a própria engine é o Docker Client, utilitário de linha de comando.
 
-#### 3.2. Hello World: Meu Docker funciona !
+#### Hello World: Meu Docker funciona !
 
 Vamos confirmar o funcionamento do nosso Docker.
 
@@ -149,7 +139,7 @@ Na documentação oficial, o passo para verificação da instalação é este He
 
 Testar correto funcionamento do Docker, incluindo a recuperação de imagens e execução de containers.
 
-#### 3.3. Meu querido amigo run
+#### Meu querido amigo run
 
 O comando run é a nossa porta de entrada no Docker, agrupando diversas funcionalidades básicas, como:
 - Download automático das imagens não encontradas: docker image pull
@@ -177,7 +167,7 @@ docker exec
 
 
 
-#### 3.4. Modo interativo
+#### Modo interativo
 
 Podemos usar containers em modo interativo, isto é extremamente útil para processos experimentais, estudo dinâmico de ferramentas e de desenvolvimento.
 
@@ -277,7 +267,7 @@ exit
 
 Demonstrar o uso do start em modo interativo, reutilizando um container previamente criado, além de confirmar que o mesmo consegue reter modificações em seu file system.
 
-**Remover depois que executar (não salav na lista de containers) -> --rm**
+**Remover depois que executar (não salva na lista de containers) -> --rm**
 
 ```
 # docker container ps -a
@@ -305,7 +295,7 @@ fc8c3355fa81        debian              "bash"              8 minutes ago       
 
 ```
 
-#### 3.5. Cego, surdo e mudo, só que não !
+#### Cego, surdo e mudo, só que não !
 
 Um container normalmente roda com o máximo de isolamento possível do host, este isolamento é possível através do Docker Engine e diversas características provídas pelo kernel.
 
@@ -315,7 +305,7 @@ Mas normalmente não queremos um isolamento total, e sim um isolamento controlad
 - Copia de arquivos para o container ou a partir do container
 - Comunicação entre os containers
 
-#### 3.5.1. Mapeamento de portas
+#### Mapeamento de portas
 
 É possível mapear tanto portas TCP como UDP diretamente para o host, permitindo acesso através de toda a rede, não necessitando ser a mesma porta do container. O método mais comum para este fim é o parâmetro -p no comando docker container run, o -p recebe um parâmetro que normalmente é composto por dois números separados por : (dois pontos). O primeiro é no host e o segundo é no container
 
@@ -335,7 +325,7 @@ Mapeamento de portas
 - Receber um erro do browser
 - Parar a execução do container
 
-#### 3.5.2. Mapeamento de volumes
+#### Mapeamento de volumes
 
 É possível mapear tanto diretórios no host como entidades especiais conhecidas como volumes para diretórios no container. Por enquanto vamos nos concentrar no mapeamento mais simples, uma diretório no host para um diretório no container. O método mais comum para este fim é o parâmetro -v no comando docker container run, o -v recebe um parâmetro que normalmente é composto por dois caminhos absolutos separados por : (dois pontos). Assim como diversos outros parâmetros, o primeiro é no host e o segundo é no container.
 
@@ -366,7 +356,7 @@ Mapeamento de volumes
 - Parar a execução do container
 
 
-#### 3.6. Modo daemon
+#### Modo daemon
 
 Agora sim, aonde o Docker começa a brilhar!
 
@@ -428,7 +418,7 @@ Vários comandos Docker possuem aliases, por exemplo o container ls tem os segui
 - docker ps (antiga sintaxe)
 
 
-#### 3.8. Nova sintaxe do Docker Client
+#### Nova sintaxe do Docker Client
 
 Agora que já vimos diversos comandos, incluindo tanto a sintaxe nova quanto a velha, podemos entender os principais motivos para esta mudança e a preferência pela nova sintaxe:
 - Melhor utilização de comandos similares em contextos diferentes:
@@ -444,14 +434,11 @@ Agora que já vimos diversos comandos, incluindo tanto a sintaxe nova quanto a v
 
 
 
-[Voltar ao Índice](#indice)
-
 ---
 
 
-## <a name="parte5"> Seção: 5 - Deixando de Ser Apenas um Usuário (11)</a>
 
-#### 4.1. Introdução
+#### Introdução
 
 Agora vamos ao conceitos necessários para deixar de apenas utilizar imagens prontas e começar a produzir nossas próprias imagens.
 
@@ -461,7 +448,7 @@ Exemplos de uso
 - Desenvolvimento - Imagens que aproximam todos os devs do ambiente de produção e diminuem a curva de entrada de novos membros
 - Imagens customizadas a partir de imagens públicas
 
-#### 4.2. Diferenças entre container e imagem
+#### Diferenças entre container e imagem
 
 Utilizando uma analogia com OOP, podemos comparar um container a um objeto (instância), enquanto a imagem seria uma classe (modelo).
 
@@ -469,7 +456,7 @@ Todos os subcomandos relativos ao container podem ser listados através do parâ
 - docker container --help
 - docker image --help
 
-#### 4.3. Entendendo melhor as imagens
+#### Entendendo melhor as imagens
 
 Toda imagem (bem como os containers) possuem um identificador único em formato hash usando sha256. Porém seu uso não é muito prático, então para simplificar isto o docker utiliza uma tag para identificar imagens.
 
@@ -536,7 +523,7 @@ Deleted: sha256:009c5bef3a79894d370a2a73a6ce2c24bbe843dabf36572a6ef29c30420894f
 Deleted: sha256:6270adb5794c6987109e54af00ab456977c5d5cc6f1bc52cce58d32ec0f15f4
 ```
 
-#### 4.4. Comandos básicos no gerenciamento de imagens
+#### Comandos básicos no gerenciamento de imagens
 
 Já usamos de maneira implícita o recurso de download de imagens docker, agora vamos entender melhor o gerenciamento de imagens.
 
@@ -561,7 +548,7 @@ Permite a criação de uma nova imagem, como veremos melhor em build.
 **docker image push <tag>**  
 Permite o envio de uma imagem ou tag local para um registry.
 
-#### 4.5. Docker Hub × Docker Registry
+#### Docker Hub × Docker Registry
 
 **Docker Registry**  
 É uma aplicação server side para guardar e distribuir imagens Docker. 
@@ -572,7 +559,7 @@ Permite o envio de uma imagem ou tag local para um registry.
 
 A linha de comando possui o comando docker search <tag> para procurar imagens no Docker Hub.
 
-#### 4.6. Construção de uma imagem
+#### Construção de uma imagem
 
 Processo para gerar uma nova imagem a partir de um arquivo de instruções. O comando docker build é o responsável por ler um Dockerfile e produzir uma nova imagem Docker.
 
@@ -610,7 +597,7 @@ Exemplo básico de um build e sua execução.
 
 O comando build exige a informação do diretório aonde o build será executado bem como aonde o arquivo de instruções se encontra
 
-#### 4.7. Instruções para a preparação da imagem
+#### Instruções para a preparação da imagem
 
 **FROM**  
 Especifica a imagem base a ser utilizada pela nova imagem.
@@ -688,7 +675,7 @@ José Malcher JR. <contato@josmealcher.net>
 
 ```
 
-#### 4.8. Instruções para povoamento da imagem
+#### Instruções para povoamento da imagem
 
 **COPY**  
 Copia arquivos e diretórios para dentro da imagem.
@@ -735,7 +722,7 @@ Successfully built 059bd79f28c5
 
 
 
-#### 4.9. Instruções com configuração para execução do container
+#### Instruções com configuração para execução do container
 
 **EXPOSE**  
 Informa ao Docker que a imagem expõe determinadas portas remapeadas no container. A exposição da porta não é obrigatória a partir do uso do recurso de redes internas do Docker. Recurso que veremos em Coordenando múltiplos containers. Porém a exposição não só ajuda a documentar como permite o mapeamento rápido através do parâmetro -P do docker container run.
@@ -840,7 +827,7 @@ Por último temos o comando VOLUME que instrui o docker a expor o diretório /lo
 - Importante substituir a referência do volumes_from pelo hash do primeiro container criado
 - O resultado do cat será o mesmo log já gerado pelo primeiro container
 
-#### 11. Enviar Imagens para o Docker Hub (video)
+#### Enviar Imagens para o Docker Hub (video)
 
 - https://hub.docker.com/
 
@@ -858,14 +845,10 @@ Password:
 ```
 ```
 
-[Voltar ao Índice](#indice)
-
 ---
 
 
-## <a name="parte6"> Seção: 6 - Redes (4)</a>
-
-#### 6.1. Visão Geral e Tipos de Redes (somente vídeo)
+#### Visão Geral e Tipos de Redes (somente vídeo)
 
 ![](img/5-1-Introducao.png)
 ![](img/5-1-Introducao_2.png)
@@ -879,7 +862,7 @@ c2c092495d0a        bridge              bridge              local
 
 ```
 
-#### 6.2. Rede Tipo None  (Sem Rede)
+#### Rede Tipo None  (Sem Rede)
 
 ![](img/6-2-RedeTipoNone.png)
 
@@ -918,7 +901,7 @@ lo        Link encap:Local Loopback
 ```
 
 
-#### 6.3. Rede Tipo Bridge
+#### Rede Tipo Bridge
 
 ![](img/6-3-RedeTipoBridge.png)
 
@@ -1160,7 +1143,7 @@ lo        Link encap:Local Loopback
 
 
 
-#### 6.4. Rede Tipo Host
+#### Rede Tipo Host
 
 Modo mais inseguro.
 
