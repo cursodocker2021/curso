@@ -150,6 +150,8 @@ Principais opções do Docker para este fim
 - docker container start -ai
 - docker container exec -t
 
+---
+
 #### O container por padrão nasce isolado, mas como vamos usar seus serviços?
 
 Um container normalmente roda com o máximo de isolamento possível do host, este isolamento é possível através do Docker Engine e diversas características provídas pelo kernel.
@@ -177,6 +179,8 @@ Mas normalmente não queremos um isolamento total, e sim um isolamento controlad
 # docker container run -p 8080:80 -v $(pwd)/html:/usr/share/nginx/html nginx
 
 ```
+
+---
 
 #### Modo daemon
 
