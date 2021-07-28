@@ -20,6 +20,9 @@ docker attach = Se atacha a um container, possibilitando executar comandos dentr
 docker cp = Copiar arquivos do container ou para o container
 docker inspect = Reupera informações detalhadas de um container, imagem
 docker logs = Retorna os logs de execução de um container
+docker rm -f <nome_do_container> = Força a exclusão do container sem precisar parar antes de excluir
+docker volume prune = Exclui todos os volumes que não estão em uso
+docker container prune = Exclui todos os container parados
 
 Os parâmetros mais utilizados na execução do container são:
 
