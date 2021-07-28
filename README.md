@@ -4,7 +4,20 @@
 
 É uma ferramenta que se apoia em recursos existentes no kernel, inicialmente Linux, para isolar a execução de processos. As ferramentas que o Docker traz são basicamente uma camada de administração de containers, baseado originalmente no LXC.
 
-Alguns isolamentos possíveis:
+O Docker é uma plataforma aberta que foi criada com o intuito de facilitar na criação de ambientes, como:
+
+- Agilizar a implementação de novos ambientes
+- Auxiliar na criação de aplicações em um ambiente isolado
+
+Com o tempo o Docker foi abraçado pela comunidade graças a:
+
+- Facilidade no gerenciamento
+- Agilidade para subir um novo ambiente de desenvolvimento
+- A simplicidade de realizar modificações
+
+Tudo isso ajuda muitos desenvolvedores e syadmins no seu dia a dia.
+
+Alguns isolamentos possíveis com o Docker:
 - Limites de uso de memória
 - Limites de uso de CPU
 - Limites de uso de I/O
@@ -48,8 +61,6 @@ Em termos práticos são File Systems, criados a partir de uma "imagem" e que po
 
 - https://www.docker.com/what-container
 
-
-
 #### O que são imagens Docker?
 
 Uma imagem Docker é a materialização de um modelo de um sistema de arquivos, modelo este produzido através de um processo chamado build.
@@ -65,7 +76,7 @@ O principal é o AUFS, que armazena os dados em camadas sobrepostas, e somente a
 - https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/
 
 
-#### Arquitetura
+#### Arquitetura do Docker
 
 De maneira simplificada podemos dizer que o uso mais básico do Docker consiste em:
 - Ter o serviço Docker Engine rodando
@@ -77,25 +88,12 @@ De maneira simplificada podemos dizer que o uso mais básico do Docker consiste 
 
 Figura 2. Arquitetura do Docker
 
-
-#### Crescimento do Docker
-
-A primeira versão do Docker é de 13 de março de 2013, tendo um pouco mais de 4 anos (na epóca que este curso foi escrito).
-
-Nestes 4 anos ele tem se tornado cada vez mais popular e uma solução real para desenvolvedores (manter o seu ambiente mais simples e próximo à produção), administradores de sistema e ultimamente para uso enterprise, sendo avaliado pelos principais players do mercado uma alternativa mais econômica em relação as soluções atuais. Em sua maioria virtualização.
-
-![](img/1-6-Crescimento-do-Docker.png)
-
----
-
-
 #### Instalação do Docker Engine e Docker Machine
 
-- Instalação (Linux, Microsoft Windows e MacOS)
-- Uso do Docker Machine
-- Uso do Docker na nuvem, Amazon, possivelmente outros
+O Docker engine pode ser instalado nativamente no Linux ou no sistema operacional Windows atráves da feature WSL.
+Para ambientes de laboratório, pode ser usada a opção de instalação chamada Docker Desktop.
 
-[Voltar ao Índice](#indice)
+- https://docs.docker.com/engine/install/
 
 ---
 
