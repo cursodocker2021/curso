@@ -1,5 +1,7 @@
 --Lista de exercícios iniciais--
 
+>>>>>>>>>>>>>>>> Exercícios base
+
 Exercício 1:
 Execute o seguinte comando para extrair informações sobre a instalação do docker no seu servidor:
 docker info
@@ -95,6 +97,8 @@ Execute o comando "docker images" para listar as imagens e confirmar que sua ima
 Execute um novo container usando a sua imagem: docker run -dti -p 80:80 apachecustom:v1.0
 Pegue o IP do servidor Docker e cole no seu navegador para validar a aplicação
 
+>>>>>>>>>>>>>>>> Exercícios base para armazenamento/volumes
+
 Exercício 12:
 Efetue o download da imagem httpd
 Crie um diretorio chamado /data/apache e entre nele
@@ -147,6 +151,30 @@ Agora liste o conteudo da pasta _data do volume teste
 Exclua o container MYSQL e liste novamente o conteudo da pasta _data do volume teste, os dados persistiram, se você subir outro container com o mesmo mapeamento, os mesmos dados poderão ser usados
 Exclua o container e o volume teste
 
+>>>>>>>>>>>>>>>> Exercícios base para rede
+
+Exercício 15:
+Execute o comando Linux "ip a" e observe a configuração da placa de rede do servidor (eth0) e da interface do Docker (docker0);
+Execute o comando "docker network --help" para verificas as opções para o comando network;
+Execute um novo container simples em background e interativo com a imagem do ubuntu;
+Execute o comando "docker network ls" para listar as redes do Docker, a rede bridge que aparece é a padrão e possui comunicação com a rede do host, todo o container criado entra nela, a não ser que você especifique uma rede;
+Execute o comando "docker network inspect bridge" para verificar os detalhes desta rede, observe que seu container consta nela;
+Exclua o container criado;
+
+Exercício 16:
+Crie dois containeres em modo background e interativo, use a imagem ubuntu e atribua o nome de ubuntu1 e ubuntu2;
+Execute o comando inspect nos dois para pegar o IP de cada um deles;
+Execute o bash em um deles e teste o ping para o outro container;
+Se falhar, instale o ping com o comando "apt-get install iputils-ping" e pingue novamente;
+Como os containeres estão na mesma rede, irão se comunicar;
+
+Exercício 17:
+Você precisa isolar uma máquina de banco das demais, para isso, crie uma nova rede no docker chamada dbnet com o comando "docker network create dbnet";
+Valide a criação executando o comando "docker network ls";
+Crie um servidor em background e interativo com o nome de mysql e com a imagem mysql, na mesma linha de criação, adicione o parâmetro "--network dbnet" para criar este container já dentro da nova rede e lembre que a imagem do MySQL precisa da variável de ambiente da senha para subir, adicione na mesma linha de execução "-e MYSQL_ROOT_PASSWORD=Senha123";
+Execute um docker inspect na rede dbnet e valide que o novo container está lá e pegue o IP do container;
+Entre em um dos dois containeres anteriores e teste o ping para o IP do mysql, valide se ele esta mesmo isolado;
+Exclua a rede dbnet e os containeres;
 
 Finalize os exercícios parando e deletando todos os containers.
 
