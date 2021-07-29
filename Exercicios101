@@ -100,7 +100,7 @@ Pegue o IP do servidor Docker e cole no seu navegador para validar a aplicação
 Exercício 12:
 Execute um container ubuntu em modo background e na mesma linha adicione "--restart always" para que o container inicie se alguma parada ocorrer;
 Execute um inspect neste container e procure por RestartPolicy para ver o valor que foi aribuido;
-DICA: para buscar somente o que quer no inspect, vocÊ pode executar "docker inspect <nomedocontainer> | grep <apalavarachaveparabuscar>"
+DICA: para buscar somente o que quer no inspect, vocÊ pode executar "docker inspect <nomedocontainer> | grep -i -a3 <apalavarachaveparabuscar>"
 
 Exercício 13:
 Pare o serviço do Docker com o systemctl;
