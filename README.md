@@ -291,14 +291,59 @@ Agora que já vimos diversos comandos, incluindo tanto a sintaxe nova quanto a v
 
 #### Criando imagens com Dockerfile
 
-- Quando se utiliza Dockerfile para gerar uma imagem, basicamente, é apresentada uma lista de instruções que serão
-aplicadas em determinada imagem para que outra imagem
-seja gerada com base nas modificações.
+- Quando se utiliza Dockerfile para gerar uma imagem, basicamente, é apresentada uma lista de instruções que serão aplicadas em determinada imagem para que outra imagem seja gerada com base nas modificações.
 
-- Podemos resumir que o arquivo Dockerfile, na verdade, representa a exata diferença entre uma determinada imagem,
-que aqui chamamos de base, e a imagem que se deseja criar.
-Nesse modelo temos total rastreabilidade sobre o que será
-modificado na nova imagem.
+- Podemos resumir que o arquivo Dockerfile, na verdade, representa a exata diferença entre uma determinada imagem, que aqui chamamos de base, e a imagem que se deseja criar. Nesse modelo temos total rastreabilidade sobre o que será modificado na nova imagem.
+
+Aqui está a lista dos comandos que você pode utilizar dentro do seu arquivo.
+
+- FROM - define a imagem base para você iniciar sua nova imagem.
+- LABEL - aqui é possível definir algumas informações para melhor organização de suas imagens, você pode usar quantas labels quiser.
+- ENV - variáveis de ambiente que serão utilizadas dentro do container quando você invocar a imagem.
+- RUN - aqui irão entrar todos os comandos que deseja executar assim que iniciar a buildar sua imagem.
+- WORKDIR - de onde serão executados os comandos, este comando é um path apenas.
+- VOLUME - possibilita o acesso de um diretório na sua máquina real.
+- USER - qual usuário irá executar os comandos dentro da imagem, o padrão é root.
+- ADD or COPY - copia arquivos e diretórios de sua máquina local para dentro da imagem.
+- EXPOSE - expõe uma porta para ser acessada publicamente, como a porta 80, por exemplo
+- CMD - executa um comando assim que você invocar a imagem.
+- ENTRYPOINT - parecido com o CMD, mas aqui normalmente você coloca um script para ser iniciado.
+
+Exemplo de um Dockerfile funcional:
+
+DICA: crie uma pasta para cada Dockerfile e trabalhe dentro dela
+
+```
+FROM nginx:latest
+
+LABEL description="Docker imagem que será gerada no nosso exmeplo."
+LABEL maintainer="Nome <email@gmail.com>"
+
+ENV VER 1
+
+RUN apt-get update && \
+    apt-get install git --yes
+
+ADD index.html /usr/share/nginx/html/index.html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+Exemplo de geração de uma imagem nova a partir do Dockerfile (Importante rodar o comando na mesma pasta onde esta o Dockerfile criado):
+
+```
+docker build --tag meusite/nginx:0.1 .
+```
+
+Exeplo do comando para subir um novo container com a imagem gerada:
+```
+docker run -dti -p 46000:80 meusite/nginx:0.1 /bin/bash
+```
+
+Agora é só abrir no navegador a URL http://localhost:46000 e testar.
+
 
 Para mais informações sobre Dockerfile consulte o livro de referência: https://github.com/cursodocker2021/curso/blob/main/Referencia
 
