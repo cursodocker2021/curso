@@ -289,6 +289,21 @@ Agora que já vimos diversos comandos, incluindo tanto a sintaxe nova quanto a v
 
 ---
 
+#### Criando imagens com Dockerfile
+
+- Quando se utiliza Dockerfile para gerar uma imagem, basicamente, é apresentada uma lista de instruções que serão
+aplicadas em determinada imagem para que outra imagem
+seja gerada com base nas modificações.
+
+- Podemos resumir que o arquivo Dockerfile, na verdade, representa a exata diferença entre uma determinada imagem,
+que aqui chamamos de base, e a imagem que se deseja criar.
+Nesse modelo temos total rastreabilidade sobre o que será
+modificado na nova imagem.
+
+Para mais informações sobre Dockerfile consulte o livro de referência: https://github.com/cursodocker2021/curso/blob/main/Referencia
+
+---
+
 #### Para mais informações e conceitos avançados do curso, acesse os seguintes links:
 
 Guide linux e livro completo de docker (Usado como referência no curso)
