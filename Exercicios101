@@ -135,7 +135,7 @@ phpinfo();
 
 </body>
 </html>
-Pegue o IP do servidor Docker e cole no seu navegador junto com a porta para validar a aplicação
+Pegue o IP do servidor Docker e cole no seu navegador para validar a aplicação
 
 Exercício 14:
 Execute o comando docker volume ls para listar os volumes Docker existentes
