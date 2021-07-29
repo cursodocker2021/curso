@@ -71,6 +71,30 @@ Após resolver o problema e subir o container, execute o comando que você usou 
 Execute o comando "docker update PERFTEST -m 256M --cpus 0.2" (Esse comando irá atualizar a configuração do container PERFTEST para que agora ele esteja limitado a 256MB de memória RAM e 20% da CPU total do servidor)
 Execute novamente o comando que você usou para observar o uso de CPU e memória, verifique o que mudou nos limites, pressione CTRL+C para sair desta visualização;
 
+Exercício 11:
+Efetue o download da imagem httpd
+Crie um arquivo chamado index.html e entre no arquivo para editá-lo
+Cole o seguinte código neste no corpo deste arquivo (Colone seu nome onde é indicado antes de salvar):
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Meu Apache Server</title>
+</head>
+<body>
+<h1> Esse servidor foi criado por <SEU NOME> </h1>
+</body>
+</html>
+Execute um novo container: docker run --name MEUAPACHE -d -p 80:80 httpd
+Copie o arquivo index.html para o container na pasta de destino /usr/local/apache2/htdocs/
+Pegue o IP do servidor Docker e cole no seu navegador para validar a aplicação
+Pare o container MEUAPACHE e confirme com o comando "docker ps"
+Execute o seguinte comando para criar a sua imagem personalizada com as alterações que você efetuou no container MEUAPACHE:
+docker commit MEUAPACHE apachecustom:v1.0
+Execute o comando "docker images" para listar as imagens e confirmar que sua imagem customizada esta lá
+Execute um novo container usando a sua imagem: docker run -dti -p 80:80 apachecustom:v1.0
+Pegue o IP do servidor Docker e cole no seu navegador para validar a aplicação
+
 Finalize os exercícios parando e deletando todos os containers.
 
 
