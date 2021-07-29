@@ -176,6 +176,10 @@ Execute um docker inspect na rede dbnet e valide que o novo container está lá 
 Entre em um dos dois containeres anteriores e teste o ping para o IP do mysql, valide se ele esta mesmo isolado;
 Exclua a rede dbnet e os containeres;
 
+Exercício 18:
+Crie um novo container ubuntu em background na rede none;
+Execute o inspect nesse container e procure pelo IPAddress;
+
 Finalize os exercícios parando e deletando todos os containers.
 
 
