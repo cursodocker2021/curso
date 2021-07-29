@@ -22,6 +22,8 @@ docker inspect = Reupera informações detalhadas de um container, imagem
 docker logs = Retorna os logs de execução de um container
 docker rm -f <nome_do_container> = Força a exclusão do container sem precisar parar antes de excluir
 docker container prune = Exclui todos os container parados
+docker commit = 'Comitar' a camada editada de um container com as camadas anteriores, gerando uma imagem customizada própria
+docker build = Buildar uma nova imagem com Dockerfile
 
 Os parâmetros mais utilizados na execução do container são:
 
