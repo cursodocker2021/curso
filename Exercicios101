@@ -95,6 +95,58 @@ Execute o comando "docker images" para listar as imagens e confirmar que sua ima
 Execute um novo container usando a sua imagem: docker run -dti -p 80:80 apachecustom:v1.0
 Pegue o IP do servidor Docker e cole no seu navegador para validar a aplicação
 
+Exercício 12:
+Efetue o download da imagem httpd
+Crie um diretorio chamado /data/apache e entre nele
+Crie um arquivo chamado index.html e entre no arquivo para editá-lo
+Cole o seguinte código neste no corpo deste arquivo:
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Exemplo Apache</title>
+</head>
+<body>
+<h1> OK !! Apache funcionando!!!!! </h1>
+</body>
+</html>
+Execute um novo container: docker run  --name APACHEWS -d -p 80:80 --volume=/data/apache:/usr/local/apache2/htdocs/ httpd
+Pegue o IP do servidor Docker e cole no seu navegador para validar a aplicação
+
+Exercício 13:
+Efetue o download da imagem php:7.4-apache
+Crie um diretorio chamado /data/php
+Execute um novo container: docker run  --name PHP-APACHE -d -p 8080:80 -v /data/php:/var/www/html php:7.4-apache
+Crie um arquivo chamado index.php no diretório /data/php e entre no arquivo para editá-lo
+Cole o seguinte código neste no corpo deste arquivo:
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Exemplo Apache</title>
+</head>
+<body>
+<h1> OK !! Apache funcionando!!!!! </h1>
+
+<?php
+phpinfo();
+?>
+
+</body>
+</html>
+Pegue o IP do servidor Docker e cole no seu navegador junto com a porta para validar a aplicação
+
+Exercício 14:
+Execute o comando docker volume ls para listar os volumes Docker existentes
+Crie um novo volume Docker chamado teste
+Lembre que os volumes Docker ficam na pasta padrão do Docker em /var/lib/docker/volumes
+Execute o comando Linux "cd /var/lib/docker/volumes/teste" não terá conteúdo, mas existe uma pasta padrão que é criada, se chama _data, entre nela com cd e liste o conteúdo, não deve existir nada já que o volume é novo
+Execute um novo container: docker run -e MYSQL_ROOT_PASSWORD=Senha123 --name MYSQL -d -p 3306:3306 --mount type=volume,src=teste,dst=/var/lib/mysql mysql
+Agora liste o conteudo da pasta _data do volume teste
+Exclua o container MYSQL e liste novamente o conteudo da pasta _data do volume teste, os dados persistiram, se você subir outro container com o mesmo mapeamento, os mesmos dados poderão ser usados
+Exclua o container e o volume teste
+
+
 Finalize os exercícios parando e deletando todos os containers.
 
 
