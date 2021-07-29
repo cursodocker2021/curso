@@ -233,7 +233,7 @@ A redes padrão do Docker são, bridge, none e host.
 - Host:
   - Essa rede tem como objetivo entregar para o container todas as interfaces existentes no docker host. De certa forma, pode agilizar a entrega dos pacotes, uma vez que não há bridge no caminho das mensagens. Mas normalmente esse overhead é mínimo e o uso de uma brigde pode ser importante para segurança e gerencia do seu tráfego.
 
-## Redes definidas pelo usuário
+#### Redes definidas pelo usuário
 
 O docker possibilita que o usuário crie redes. Essas redes são associadas ao elemento que o docker chama de driver de rede.
 
