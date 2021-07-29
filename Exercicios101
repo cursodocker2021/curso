@@ -112,11 +112,12 @@ Cole o seguinte código neste no corpo deste arquivo:
 </html>
 Execute um novo container: docker run  --name APACHEWS -d -p 80:80 --volume=/data/apache:/usr/local/apache2/htdocs/ httpd
 Pegue o IP do servidor Docker e cole no seu navegador para validar a aplicação
+Exclua o container APACHEWS
 
 Exercício 13:
 Efetue o download da imagem php:7.4-apache
 Crie um diretorio chamado /data/php
-Execute um novo container: docker run  --name PHP-APACHE -d -p 8080:80 -v /data/php:/var/www/html php:7.4-apache
+Execute um novo container: docker run  --name PHP-APACHE -d -p 80:80 -v /data/php:/var/www/html php:7.4-apache
 Crie um arquivo chamado index.php no diretório /data/php e entre no arquivo para editá-lo
 Cole o seguinte código neste no corpo deste arquivo:
 <!DOCTYPE html>
