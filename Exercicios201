@@ -1,1 +1,128 @@
 >>>>>>>>>>>>>>>> Exercícios de imagem
+
+Acesse este site para entender mais sobre o Dockerfile:
+https://kapeli.com/cheat_sheets/Dockerfile.docset/Contents/Resources/Documents/index
+
+Exercício 1:
+Crie uma pasta chamada primeirobuild e entre nela
+Crie um arquivo chamado Dockerfile e edite o mesmo adicionando o seguinte conteúdo:
+FROM nginx:1.13
+
+LABEL maintainer '<SEU NOME>'
+
+RUN echo '<h1>Hello World !</h1>' > /usr/share/nginx/html/index.html
+Salve e saia do arquivo
+Execute os seguintes comandos na sequência:
+docker image build -t meu-primeiro-build .
+docker image ls
+docker container run -p 80:80 ex-simple-build
+Entre no navegador com o endereço http://localhost
+Pare e exclua o container e a imagem
+
+Exercício 2:
+Crie uma pasta chamada segundobuild e entre nela
+Crie um arquivo chamado Dockerfile e edite o mesmo adicionando o seguinte conteúdo:
+FROM nginx:1.13
+
+LABEL maintainer 'Nome <email>'
+
+RUN echo '<h1>Sem conteúdo</h1>' > /usr/share/nginx/html/conteudo.html
+
+COPY *.html /usr/share/nginx/html/
+Salve e saia do arquivo
+Crie um novo arquivo chamado index.html com este conteúdo:
+<a href="conteudo.html">Conteúdo do site</a>
+Salve e saia do arquivo
+Execute os seguintes comandos na sequência:
+docker image build -t build-copia-arquivos .
+docker image ls
+docker container run -p 80:80 build-copia-arquivos
+Entre no navegador com o endereço http://localhost
+Pare e exclua o container e a imagem
+
+Exercício 3:
+Crie uma pasta chamada terceirobuild e entre nela
+Crie um arquivo chamado Dockerfile e edite o mesmo adicionando o seguinte conteúdo:
+FROM python:3.6
+
+LABEL maintainer 'Nome <email>'
+
+RUN useradd www && \
+  mkdir /app && \
+  mkdir /log && \
+  chown www /log
+
+USER www
+
+VOLUME /log
+
+WORKDIR /app
+
+EXPOSE 8000
+
+ENTRYPOINT ["/usr/local/bin/python"]
+
+CMD ["run.py"]
+Salve e saia do arquivo
+Crie um arquivo index.html com o conteúdo:
+<p>Hello from python</p>
+Crie um arquivo chamado run.py com o conteúdo:
+import logging
+import http.server
+import socketserver
+import getpass
+class MyHTTPHandler(http.server.SimpleHTTPRequestHandler):
+  def log_message(self, format, *args):
+  logging.info("%s - - [%s] %s\n" % (
+  self.client_address[0],
+  self.log_date_time_string(),
+  format%args))
+logging.basicConfig(
+  filename='/log/http-server.log',
+  format='%(asctime)s - %(levelname)s - %(message)s',
+  level=logging.INFO)
+logging.getLogger().addHandler(logging.StreamHandler())
+logging.info('inicializando...')
+PORT = 8000
+httpd = socketserver.TCPServer(("", PORT), MyHTTPHandler)
+logging.info('escutando a porta: %s', PORT)
+logging.info('usuário: %s', getpass.getuser())
+httpd.serve_forever()
+Salve e saia do arquivo
+Execute os seguintes comandos na sequência:
+docker build -t build-dev-python .
+docker run -it -v $(pwd):/app -p 80:8000 build-dev-python
+Entre no navegador com o endereço http://localhost
+Pare e exclua o container e a imagem
+
+LEIA e EXECUTE:
+Neste exemplo temos um pequeno servidor web atendendo na porta 8000 e
+exposta via instrução EXPOSE.
+
+Também temos o uso do ENTRYPOINT e CMD definindo exatamente que processo será
+executado ao subir o container, podemos notar que o container consegue
+encontrar o run.py, por conta da instrução WORKDIR que define o diretório aonde o
+processo principal será executado.
+
+Ao executar o container, uma das informações colocados no log (stdout e arquivo
+em disco) é o usuário corrente, e podemos notar que o processo não está rodando
+como root e sim www, conforme foi definido pela instrução USER.
+
+Por último temos o comando VOLUME que instrui o docker a expor o diretório /log
+como um volume, que pode ser facilmente mapeado por outro container. Podemos
+verificar isto seguindo os seguintes passos:
+• Construir a imagem e executar o container
+• Acessar a URL http://localhost:8000 via browser
+• Verificar o log gerado na saída do container criado
+• Criar e rodar um segundo container mapeando os volumes do primeiro e
+checar o arquivo de log: docker run -it --volumes-from=<container criado>
+debian cat /log/http-server.log
+• Importante substituir a referência do volumes_from pelo hash do primeiro
+container criado
+• O resultado do cat será o mesmo log já gerado pelo primeiro container
+
+Exercício 4:
+Instale e configure o GIT no seu servidor:
+https://linuxhint.com/install_git_ubuntu_20-24/
+Execute o seguinte exercício:
+https://github.com/ondrejsika/docker-training#practice
