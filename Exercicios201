@@ -126,3 +126,6 @@ Instale e configure o GIT no seu servidor:
 https://linuxhint.com/install_git_ubuntu_20-24/
 Execute o seguinte exercício:
 https://github.com/ondrejsika/docker-training#practice
+
+Exercício 5:
+https://github.com/docker/labs/blob/master/beginner/chapters/webapps.md#23-create-your-first-image
