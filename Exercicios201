@@ -109,3 +109,54 @@ https://github.com/ondrejsika/docker-training#practice
 
 Exercício 5:
 https://github.com/docker/labs/blob/master/beginner/chapters/webapps.md#23-create-your-first-image
+
+>>>>>>>>>>>>>>>> Exercício de subida de imagem para o Dockerhub
+
+Exercício 6:
+Crie uma pasta chamada "siteapache" e entre nela
+Crie uma pasta chamada "site" dentro da "siteapache" e entre nela
+Execute o comando Linux "wget http://site1368633667.hospedagemdesites.ws/site1.zip"
+Agora execute os seguintes comandos Linux em ordem:
+unzip site1.zip
+rm -rf site1.zip
+tar -czf site.tar ./
+cp site.tar ../
+cd ../
+rm Rf site
+Crie um arquivo chamado Dockerfile com o seguinte conteúdo:
+FROM debian
+
+RUN apt-get update && apt-get install -y apache2 && apt-get clean
+
+ENV APACHE_LOCK_DIR="var/lock"
+ENV APACHE_PID_FILE="var/run/apache2.pid"
+ENV APACHE_RUN_USER="www-data"
+ENV APACHE_RUN_GROUP="www-data"
+ENV APACHE_LOG_DIR="/var/log/apache2"
+
+ADD site.tar /var/www/html
+
+LABEL description="Apache Webserver 1.0"
+
+VOLUME /var/www/html/
+
+EXPOSE 80
+
+ENTRYPOINT ["/usr/sbin/apachectl"]
+
+CMD ["-D", "FOREGROUND"]
+Agora efetue o build da imagem com o Dockerfile que você criou atribuindo o nome "siteapache" e a tag "1.0" para a imagem
+Liste as imagens Docker
+Faça um teste subindo um container em background em modo interativo, mapeando a porta 80 interna e externa com a imagem que você criou
+Teste seu site no navegador
+Agora pare e exclua o container e a imagem
+
+Agora vamos enviar sua imagem customizada para seu repositório no Dockerhub:
+Entre no Dockerhub e crie um repositório público chamado "siteapache"
+Volte para o seu servidor e execute:
+docker login
+docker build . -t nome-de-usuário-dockerhub/siteapache:1.0
+docker push nome-de-usuário-dockerhub/siteapache:1.0
+Exclua a imagem local
+Faça um teste subindo um container em background em modo interativo, mapeando a porta 80 interna e externa com a imagem apontando diretamente para o dockerhub no formato nome-de-usuário-dockerhub/siteapache:1.0
+
