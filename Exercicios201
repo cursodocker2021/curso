@@ -118,9 +118,15 @@ apt install npm
 nodejs -v
 Execute os passos do laboratório: https://www.digitalocean.com/community/tutorials/como-construir-uma-aplicacao-node-js-com-o-docker-pt
 
+Exercício 7:
+Execute a partir do "Second way": https://codefresh.io/docker-tutorial/create-docker-images-for-java/
+
+Exercício 8:
+
+
 >>>>>>>>>>>>>>>> Exercício de subida de imagem para o Dockerhub
 
-Exercício 7:
+Exercício 9:
 Crie uma pasta chamada "siteapache" e entre nela
 Crie uma pasta chamada "site" dentro da "siteapache" e entre nela
 Execute o comando Linux "wget http://site1368633667.hospedagemdesites.ws/site1.zip"
@@ -170,7 +176,7 @@ Faça um teste subindo um container em background em modo interativo, mapeando a
 
 >>>>>>>>>>>>>>>> Exercício criação e uso de registry próprio
 
-Exercício 8:
+Exercício 10:
 Entre no docker hub e procure pela imagem do registry, pegue a informação da porta padrão que deverá ser usada
 Suba o container do seu registry próprio: docker run -d -p <PORTA>:<PORTA> --restart always --name registry registry:2
 Consulte as imagens existentes no seu registry: curl localhost:<PORTA>/v2/_catalog
