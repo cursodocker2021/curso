@@ -16,7 +16,7 @@ Execute os seguintes comandos na sequência:
 docker image build -t meu-primeiro-build .
 docker image ls
 docker container run -p 80:80 meu-primeiro-build
-Entre no navegador com o endereço http://localhost
+Entre no navegador com o IP do host ou execute um curl -l http://localhost no Linux
 Pare e exclua o container e a imagem
 
 Exercício 2:
@@ -37,7 +37,7 @@ Execute os seguintes comandos na sequência:
 docker image build -t build-copia-arquivos .
 docker image ls
 docker container run -p 80:80 build-copia-arquivos
-Entre no navegador com o endereço http://localhost
+Entre no navegador com o IP do host ou execute um curl -l http://localhost no Linux
 Pare e exclua o container e a imagem
 
 Exercício 3:
@@ -92,7 +92,7 @@ Salve e saia do arquivo
 Execute os seguintes comandos na sequência:
 docker build -t build-dev-python .
 docker run -it -v $(pwd):/app -p 80:8000 build-dev-python
-Entre no navegador com o endereço http://localhost
+Entre no navegador com o IP do host ou execute um curl -l http://localhost no Linux
 Pare e exclua o container e a imagem
 
 LEIA e EXECUTE:
@@ -112,7 +112,7 @@ Por último temos o comando VOLUME que instrui o docker a expor o diretório /lo
 como um volume, que pode ser facilmente mapeado por outro container. Podemos
 verificar isto seguindo os seguintes passos:
 • Construir a imagem e executar o container
-• Acessar a URL http://localhost:8000 via browser
+• Acessar a URL http://<IP>:8000 via browser
 • Verificar o log gerado na saída do container criado
 • Criar e rodar um segundo container mapeando os volumes do primeiro e
 checar o arquivo de log: docker run -it --volumes-from=<container criado>
