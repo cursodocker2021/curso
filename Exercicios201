@@ -160,3 +160,15 @@ docker push nome-de-usuário-dockerhub/siteapache:1.0
 Exclua a imagem local
 Faça um teste subindo um container em background em modo interativo, mapeando a porta 80 interna e externa com a imagem apontando diretamente para o dockerhub no formato nome-de-usuário-dockerhub/siteapache:1.0
 
+>>>>>>>>>>>>>>>> Exercício criação e uso de registry próprio
+
+Exercício 7:
+Entre no docker hub e procure pela imagem do registry, pegue a informação da porta padrão que deverá ser usada
+Suba o container do seu registry próprio: docker run -d -p <PORTA>:<PORTA> --restart always --name registry registry:2
+Consulte as imagens existentes no seu registry: curl localhost:<PORTA>/v2/_catalog
+Deslogue da sua conta do Docker hub: docker logout
+Faça um 're-tag' da sua imagem siteapache para poder enviar para o seu registry próprio: docker image tag <ID DA IMAGEM> localhost:<PORTA DO REGISTRY>/siteapache:1.0
+Suba sua imagem para o seu regisry próprio: docker push localhost:<PORTA>/siteapache:1.0
+Consulte as imagens existentes no seu registry: curl localhost:<PORTA>/v2/_catalog
+Teste sua imagem: docker run -d -p 80:80 localhost:<PORTA>/siteapache:1.0
+
