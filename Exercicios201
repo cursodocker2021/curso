@@ -15,7 +15,7 @@ Salve e saia do arquivo
 Execute os seguintes comandos na sequência:
 docker image build -t meu-primeiro-build .
 docker image ls
-docker container run -p 80:80 ex-simple-build
+docker container run -p 80:80 meu-primeiro-build
 Entre no navegador com o endereço http://localhost
 Pare e exclua o container e a imagem
 
