@@ -110,6 +110,14 @@ https://github.com/ondrejsika/docker-training#practice
 Exercício 5:
 https://github.com/docker/labs/blob/master/beginner/chapters/webapps.md#23-create-your-first-image
 
+Exercício 6:
+Isntale o NodeJs no seu servidor:
+apt update
+apt install nodejs
+apt install npm
+nodejs -v
+Execute os passos do laboratório: https://www.digitalocean.com/community/tutorials/como-construir-uma-aplicacao-node-js-com-o-docker-pt
+
 >>>>>>>>>>>>>>>> Exercício de subida de imagem para o Dockerhub
 
 Exercício 6:
