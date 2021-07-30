@@ -121,12 +121,9 @@ Execute os passos do laboratório: https://www.digitalocean.com/community/tutori
 Exercício 7:
 Execute a partir do "Second way": https://codefresh.io/docker-tutorial/create-docker-images-for-java/
 
-Exercício 8:
-
-
 >>>>>>>>>>>>>>>> Exercício de subida de imagem para o Dockerhub
 
-Exercício 9:
+Exercício 8:
 Crie uma pasta chamada "siteapache" e entre nela
 Crie uma pasta chamada "site" dentro da "siteapache" e entre nela
 Execute o comando Linux "wget http://site1368633667.hospedagemdesites.ws/site1.zip"
@@ -176,7 +173,7 @@ Faça um teste subindo um container em background em modo interativo, mapeando a
 
 >>>>>>>>>>>>>>>> Exercício criação e uso de registry próprio
 
-Exercício 10:
+Exercício 9:
 Entre no docker hub e procure pela imagem do registry, pegue a informação da porta padrão que deverá ser usada
 Suba o container do seu registry próprio: docker run -d -p <PORTA>:<PORTA> --restart always --name registry registry:2
 Consulte as imagens existentes no seu registry: curl localhost:<PORTA>/v2/_catalog
@@ -186,3 +183,11 @@ Suba sua imagem para o seu regisry próprio: docker push localhost:<PORTA>/sitea
 Consulte as imagens existentes no seu registry: curl localhost:<PORTA>/v2/_catalog
 Teste sua imagem: docker run -d -p 80:80 localhost:<PORTA>/siteapache:1.0
 
+>>>>>>>>>>>>>>>> Exercício para visualização gráfica do Docker
+
+Exercício 10:
+Execute o seguinte container e abra no navegador com o IP do servidor e a respectiva porta: docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce
+Execute a configuração inicial e explore as os containers, volumes, redes.
+Fique a vontade para experimentar, crie containers com a interface usando imagens do dockerhub, insira o seu registry local e crie um container com sua imagem que consta nele e explore o restante do sistema.
+
+>>>>>>>>>>>>>>>> Depois de todo esse trabalho, execute este container, abra no navegador e relaxe um pouco: docker run -d -p 8600:8080 bharathshetty4/supermario
