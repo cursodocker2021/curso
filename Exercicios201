@@ -191,3 +191,4 @@ Execute a configuração inicial e explore as os containers, volumes, redes.
 Fique a vontade para experimentar, crie containers com a interface usando imagens do dockerhub, insira o seu registry local e crie um container com sua imagem que consta nele e explore o restante do sistema.
 
 >>>>>>>>>>>>>>>> Depois de todo esse trabalho, execute este container, abra no navegador e relaxe um pouco: docker run -d -p 8600:8080 bharathshetty4/supermario
+
