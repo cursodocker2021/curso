@@ -66,28 +66,8 @@ CMD ["run.py"]
 Salve e saia do arquivo
 Crie um arquivo index.html com o conteúdo:
 <p>Hello from python</p>
-Crie um arquivo chamado run.py com o conteúdo:
-import logging
-import http.server
-import socketserver
-import getpass
-class MyHTTPHandler(http.server.SimpleHTTPRequestHandler):
-  def log_message(self, format, *args):
-  logging.info("%s - - [%s] %s\n" % (
-  self.client_address[0],
-  self.log_date_time_string(),
-  format%args))
-logging.basicConfig(
-  filename='/log/http-server.log',
-  format='%(asctime)s - %(levelname)s - %(message)s',
-  level=logging.INFO)
-logging.getLogger().addHandler(logging.StreamHandler())
-logging.info('inicializando...')
-PORT = 8000
-httpd = socketserver.TCPServer(("", PORT), MyHTTPHandler)
-logging.info('escutando a porta: %s', PORT)
-logging.info('usuário: %s', getpass.getuser())
-httpd.serve_forever()
+Salve e saia do arquivo
+Crie um arquivo chamado run.py com o conteúdo do arquivo: https://github.com/cursodocker2021/curso/blob/main/run.py
 Salve e saia do arquivo
 Execute os seguintes comandos na sequência:
 docker build -t build-dev-python .
