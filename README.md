@@ -388,7 +388,7 @@ services:
       - site_conf:/etc/httpd
 
 ````
-XXXXX
+Para instalar o Docker compose utilize a documentação oficial: https://docs.docker.com/compose/install/
 
 ---
 
