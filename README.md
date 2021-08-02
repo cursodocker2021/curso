@@ -349,6 +349,49 @@ Para mais informações sobre Dockerfile consulte o livro de referência: https:
 
 ---
 
+#### Docker Compose
+
+Como já conversamos durante o curso, o ideal de um container é que ele seja específico, ou seja, rode apenas o serviço para o qual ele foi desenhado (início do pensamento de micro serviços), porém, as aplicações no geral são compostos por mais de um componente, como por exemplo um serviço de Wordpress, onde temos um servidor (ou container) para a aplicação e um servidor (ou container/serviço PAAS) para o banco de dados, sendo assim, precisamos sair do gerenciamento unitário de containers e avançar para um olhar de serviço.
+
+O Docker compose é uma ferramenta para definir e gerenciar aplicações docker com múltiplos containers utilizando arquivos YAML. Neste contexto, os containers são chamados de serviço. No mesmo arquivo você pode indicar tudo o que você precisa para que sua aplicação funcione, indicando por exemplo a imagem que precisa usar, ou usando o build para indicar um Dockerfile externo que deverá rodar para que o que esta descrito no compose rode.
+
+Exemplo de um arquivo compose:
+
+````
+version: '3.8'
+
+networks:
+  web_network:
+    driver: overlay
+
+volumes:
+  site_conf:
+
+services:
+  web-server:
+    image: httpd:latest
+    ports: "80:80"
+    deploy:
+      placement:
+        constraints:
+          - "node.role==worker"
+      mode: replicated
+      replicas: 2
+      resource:
+        cpus: "0.50"
+        memory: 256M
+    restart: always
+    networks:
+      - web_network
+    volumes:
+      - /dir/site/html:/var/www/html
+      - site_conf:/etc/httpd
+
+````
+XXXXX
+
+---
+
 #### Para mais informações e conceitos avançados do curso, acesse os seguintes links:
 
 Guide linux e livro completo de docker (Usado como referência no curso)
