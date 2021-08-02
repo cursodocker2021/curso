@@ -1,0 +1,17 @@
+>>>>>>>>>>>>>>>> Exercícios e desafios de Docker compose
+
+Exercício 1:
+Efetue a instalação do Docker compose e execute o primeiro compose descrito neste post: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-pt
+Aproveite para ler o conteúdo entre as seções (todo o tutorial), isso trará a base para a utilização do Docker compose.
+
+Exercício 2: https://docs.docker.com/samples/wordpress/
+
+Exercício 3: https://docs.docker.com/samples/rails/
+
+Exercício 4: https://docs.docker.com/samples/django/
+
+Exercício 5: https://grafana.com/grafana/dashboards/893
+
+Desafio 1: Sistema Node.js fazendo uso de mensageria (RabbitMQ)
+https://geshan.com.np/blog/2021/07/rabbitmq-docker-nodejs/
+
