@@ -392,6 +392,13 @@ Para instalar o Docker compose utilize a documentação oficial: https://docs.do
 
 ---
 
+#### Docker Machine
+
+Docker Machine é a ferramenta que possibilita criar e manter ambientes Docker em máquinas virtuais, ambientes de nuvem e, até mesmo, em máquina física.
+- https://docs.docker.com/machine/
+
+---
+
 #### Para mais informações e conceitos avançados do curso, acesse os seguintes links:
 
 Guide linux e livro completo de docker (Usado como referência no curso)
