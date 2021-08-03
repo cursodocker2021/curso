@@ -61,4 +61,5 @@ docker run -d --name wordpress \
  -e WORDPRESS_DB_PASSWORD="wordpress" \
  -e WORDPRESS_DB_NAME="wordpress" \
  wordpress
- Entre no Wordpress e finalize a configuração
+Entre no Wordpress e finalize a configuração
+Apague as duas VMs
