@@ -48,6 +48,7 @@ docker run -d --name mysql-wordpress \
 -e MYSQL_USER=wordpress \
 -e MYSQL_PASSWORD=wordpress \
 mysql:5.7
+Saia da VM
 
 Exercício 12:
 Crie uma máquina com Docker machine chamada "wordpress"
