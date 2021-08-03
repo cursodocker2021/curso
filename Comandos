@@ -2,7 +2,7 @@ Referência para comandos mais usados no Docker: https://www.jrebel.com/system/f
 
 ---
 
-Comandos mais usados na gerência de container e imagem no modo interativo do Docker:
+#### Comandos mais usados na gerência de container e imagem no modo interativo do Docker:
 
 docker --help = Comando usado para retornar os comandos do docker, para retornar parâmetros de algum comando específico, basta executar o comando "docker <comando> --help, exemplo: docker run --help
 docker info = Retorna informações da configuração do docker instalado
@@ -40,20 +40,24 @@ Parâmetro /	Explicação
 
 Exemplo de uso de parâmetros: docker run -dti ubuntu (executa um container no modo background e de forma interativa usando a imagem Ubuntu)
 
-Comandos mais usados para gerenciar volumes:
+#### Comandos mais usados para gerenciar volumes:
 
+docker volume --help: Ajuda
 docker volume create <nome_do_volume> = Criar um volume Docker
 docker volume ls = Listar os volumes Docker
 docker volume rm <nome_do_volume> = Excluir volume Docker
 docker volume prune = Exclui todos os volumes que não estão em uso
 
-Comandos mais usados para gerenciar redes:
+#### Comandos mais usados para gerenciar redes:
+
+docker network --help: Ajuda
 docker network create <nome_da_nova_rede> = Criar redes
 docker network ls (nome_da_rede> = Listar redes
 docker network inspect <nome_da_rede> = Detalhar redes
 
-Comandos mais usados no Docker compose:
+#### Comandos mais usados no Docker compose:
 
+docker-compose --help: Ajuda
 docker-compose up: cria e inicia os contêineres
 docker-compose build: realiza apenas a etapa de build das imagens que serão utilizadas
 docker-compose logs: visualiza os logs dos contêineres
@@ -63,6 +67,17 @@ docker-compose scale: permite aumentar o número de réplicas de um contêiner
 docker-compose start: inicia os contêineres
 docker-compose stop: paralisa os contêineres
 docker-compose down: paralisa e remove todos os contêineres e seus componentes como rede, imagem e volume
+
+#### Comandos mais usados no Docker compose:
+
+docker-machine --help: Ajuda
+docker-machine version: Verificar a versão do Docker machine
+docker-machine create --driver <Ex:hyperv> <nomevm>: Criar nova VM
+docker-machine ls: Listar máquinas
+docker-machine ip <nomevm>: Verificar IP da máquina
+docker-machine ssh <nomevm>: Entrar na VM por SSH
+docker-machine stop <nomevm>: Para VM
+docker-machine start <nomevm>: Iniciar VM
 
 Referência oficial dos comandos base do Docker com a explicação de cada um deles:
 https://docs.docker.com/engine/reference/commandline/cli/
