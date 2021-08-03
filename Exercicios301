@@ -31,3 +31,34 @@ Escolha 3 ou mais labs da seção "Samples of Docker Compose applications with m
 
 Exercício 10: https://deployeveryday.com/2016/09/28/composing-docker-environments-scale.html
 ATENÇÃO: Leia com atenção todo o artigo e vá executando o lab proposto, este conceito é muito importante!
+
+>>>>>>>>>>>>>>>> Exercício de Docker machine
+
+Exercício 11:
+Instale o Docker machine no seu host
+Crie uma máquina com Docker machine chamada "mysqlsrv"
+Entre via SSH nesta VM
+Crie o diretório de dados do MySQL: sudo mkdir -p /docker/mysql/wordpress/data
+Suba um container desta forma nela:
+docker run -d --name mysql-wordpress \
+-p 3306:3306 \
+-v /docker/mysql/wordpress/data:/var/lib/mysql \
+-e MYSQL_ROOT_PASSWORD=secret \
+-e MYSQL_DATABASE=wordpress \
+-e MYSQL_USER=wordpress \
+-e MYSQL_PASSWORD=wordpress \
+mysql:5.7
+
+Exercício 12:
+Crie uma máquina com Docker machine chamada "wordpress"
+Pegue o IP da VM "mysqlsrv"
+Entre via SSH nesta VM via docker-machine
+Suba um container desta forma nela (AJUSTE O IP PARA O IP DA VM DE BANCO DE DADOS):
+docker run -d --name wordpress \
+ -p 80:80 \
+ -e WORDPRESS_DB_HOST="IP_MYSQLSRV" \
+ -e WORDPRESS_DB_USER="wordpress" \
+ -e WORDPRESS_DB_PASSWORD="wordpress" \
+ -e WORDPRESS_DB_NAME="wordpress" \
+ wordpress
+ Entre no Wordpress e finalize a configuração
