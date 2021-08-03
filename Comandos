@@ -68,7 +68,7 @@ docker-compose start: inicia os contêineres
 docker-compose stop: paralisa os contêineres
 docker-compose down: paralisa e remove todos os contêineres e seus componentes como rede, imagem e volume
 
-#### Comandos mais usados no Docker compose:
+#### Comandos mais usados no Docker machine:
 
 docker-machine --help: Ajuda
 docker-machine version: Verificar a versão do Docker machine
