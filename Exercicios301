@@ -15,3 +15,19 @@ Exercício 5: https://grafana.com/grafana/dashboards/893
 Desafio 1: Sistema Node.js fazendo uso de mensageria (RabbitMQ)
 https://geshan.com.np/blog/2021/07/rabbitmq-docker-nodejs/
 
+Exercício 6:
+Suba o Docker Dashboard para usar durante seu trabalho com o Docker: https://dockerdashboard.github.io/#getstarted
+
+Exercício 7: https://github.com/fuadajip/dockercompose-mysql-phpmyadmin
+
+Exercício 8: https://github.com/hellokoding/dockercompose-springboot-mysql-nginx
+Dica: Use o GIT como no exerício 7
+
+Exercício 9: https://github.com/hellokoding/dockercompose-springboot-mongodb-nginx
+Dica: Use o GIT como no exerício 7
+
+Desafio 2: https://github.com/docker/awesome-compose#samples-of-docker-compose-applications-with-multiple-integrated-services
+Escolha 3 ou mais labs da seção "Samples of Docker Compose applications with multiple integrated services" para executar, continue usando o GIT como nos exercícios anteriores
+
+Exercício 10: https://deployeveryday.com/2016/09/28/composing-docker-environments-scale.html
+ATENÇÃO: Leia com atenção todo o artigo e vá executando o lab proposto, este conceito é muito importante!
