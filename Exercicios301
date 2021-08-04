@@ -64,3 +64,22 @@ docker run -d --name wordpress \
  wordpress
 Entre no Wordpress e finalize a configuração
 Apague as duas VMs
+
+>>>>>>>>>>>>>>>> Exercício de Docker Swarm + Docker Stack
+
+Exercício 13:
+Crie três VMs com Docker Machine usando o driver "hyperv" com o nome dw1, dw2 e dw3
+Entre na máquina dw1 e inicie o swarm: docker swarm init --advertise-addr [ip]
+Copie o comando+token que será gerado na máquina dw1
+Entre nas máquinas 2 e 3 e insira o comando+token para inseri-las no cluster
+Volte para a vm manager (dw1) e liste os nodes
+Agora implemente o seguinte sistema (Swarm): https://github.com/docker/example-voting-app
+Agora efetue os seguintes comandos e visualize os dados com atenção:
+docker stack ls
+docker stack services vote
+docker service ps vote
+Entre na aplicação pelo navegador
+
+Exercício 13:
+Implemente o Portainer para auxiliar no uso do Swarm: https://documentation.portainer.io/v2.0/deploy/ceinstallswarm/
+Entre no sistema e explore os recursos relacionados ao cluster e demais que antes não estavam disponíveis quando utilizamos da primeira vez
