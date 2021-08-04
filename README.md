@@ -399,6 +399,24 @@ Docker Machine é a ferramenta que possibilita criar e manter ambientes Docker e
 
 ---
 
+#### Docker Swarm  + Docker Stack
+
+Um cluster (do inglês cluster : 'grupo, aglomerado') consiste em computadores fracamente ou fortemente ligados que trabalham em conjunto, de modo que, em muitos aspectos, podem ser considerados como um único sistema. Diferentemente dos computadores em grade, computadores em cluster têm cada conjunto de nós, para executar a mesma tarefa, controlado e programado por software. https://pt.wikipedia.org/wiki/Cluster
+
+Swarm é uma ferramenta de cluster nativa para Docker, que utiliza a API padrão. Ou seja, qualquer ferramenta que fizer uso da API Docker, poderá usar Swarm para escalar contêineres, de forma transparente, entre vários hosts e com alta disponibilidade.
+
+Ao executar o Docker Engine no modo swarm, você pode usar o Docker Stack Deploy para implantar uma pilha de aplicativos completa. O comando deploy aceita uma descrição de stack na forma de um Compose file. Desta forma, é possível usar os arquivos docker-compose.yml para criar stack de contêineres do docker, não havendo necessidade de instalar o Docker Compose.O comando docker stack deploy suporta qualquer arquivo Compose da versão “3.0” ou superior.
+
+Na estrutura do Docker Swarm, teremos as máquinas que irão gerênciar o cluster (managers) e as máquinas que irão hospedar e executar os serviços (aplicações).
+Um serviço é uma abstração dos conjunto de containers que foram instanciados a partir de uma imagem e tem uma função única. Para que os serviços se comuniquem entre os hosts, utiliza-se a rede do tipo overlay, que já comentamos no curso.
+
+Os comandos de Docker Swarm e Stack estão na lista de comandos deste repo.
+
+Documentação do Swarm:
+- https://docs.docker.com/engine/swarm/
+
+---
+
 #### Para mais informações e conceitos avançados do curso, acesse os seguintes links:
 
 Guide linux e livro completo de docker (Usado como referência no curso)
