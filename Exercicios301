@@ -83,3 +83,12 @@ Entre na aplicação pelo navegador
 Exercício 13:
 Implemente o Portainer para auxiliar no uso do Swarm: https://documentation.portainer.io/v2.0/deploy/ceinstallswarm/
 Entre no sistema e explore os recursos relacionados ao cluster e demais que antes não estavam disponíveis quando utilizamos da primeira vez
+
+Exercício 14: https://bday2021.play-with-docker.com/voting-app/
+
+Exercício 15: 
+Execute e leia atentamente o exercício: https://doc.traefik.io/traefik/v1.7/user-guide/swarm-mode/
+
+Exercício 16:
+Execute toda a trilha de exercícios lendo com atenção as explicações para consolidar o conhecimento: https://www.katacoda.com/courses/docker-orchestration
+
