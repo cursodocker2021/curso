@@ -79,6 +79,21 @@ docker-machine ssh <nomevm>: Entrar na VM por SSH
 docker-machine stop <nomevm>: Para VM
 docker-machine start <nomevm>: Iniciar VM
 
+#### Comandos mais usados no Docker Swar + Stack:
+
+docker swarm --help: Ajuda
+docker swarm init --advertise-addr [ip]: Iniciar o swarm no primeiro manager
+docker swarm join --token [token] [ip]:2377: Logo após o init, o comando com o token inicial será apresentado para poder rodar e adicionar novos workers
+docker swarm join-token worker: Caso não tenha o token inicial, poderá rodar este comando posteriormente no manager para adicionar novos workers
+docker node ls <nome_do_node>: Listar nodes
+docker node update... : Atualizar a definição de um node
+docker node promote/demote <nome_do_node>: Promover ou despromover um node
+docker service create... : Criar um serviço no cluster swarm
+docker service ls: Listar serviços do cluster
+docker service ps <nome_do_serviço>: Pegar informações de um serviço
+docker service rm <nome_do_serviço>: Remover serviço do cluster
+docker stack deploy -c <nome_arquivo>.yml <nome_serviço>: Efetuar um deploy/atualização de serviços com arquivo Compose em um cluster Swarm
+
 Referência oficial dos comandos base do Docker com a explicação de cada um deles:
 https://docs.docker.com/engine/reference/commandline/cli/
 
