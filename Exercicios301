@@ -77,7 +77,8 @@ Agora implemente o seguinte sistema (Swarm): https://github.com/docker/example-v
 Agora efetue os seguintes comandos e visualize os dados com atenção:
 docker stack ls
 docker stack services vote
-docker service ps vote
+docker service ls
+docker service ps <nome_dos_servicos_do_comando_anterior>
 Entre na aplicação pelo navegador
 
 Exercício 13:
