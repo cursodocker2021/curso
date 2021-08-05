@@ -93,3 +93,27 @@ Exercício 16:
 Execute toda a trilha de exercícios lendo com atenção as explicações para consolidar o conhecimento: https://www.katacoda.com/courses/docker-orchestration
 
 Desafio 3 (Opcional/avançado): https://dockerswarm.rocks/
+
+Exercício 17:
+Crie um registry local, a imagem e efetue o deploy do serviço
+https://docs.docker.com/engine/swarm/stack-deploy/
+
+Desafio 4:
+Crie uma nova VM com o Docker Machine, chamada "dw4" e ingresse ela no cluster
+Entre no manager e mude para o modo root
+Execute o comando "docker node update --help" e aprenda a configurar o modo drain no node "dw3", para que ele não execute containers
+Edite o arquivo hosts do seu Windows e crie uma entrada para a url wordpressdemo.net que aponte para o IP do "dw1", você utilizará esta URL no lab
+Execute: git clone https://github.com/iiriix/docker-swarm-wordpress
+Visualize o arquivo "docker-stack.yml" para confirmar se existe a configuração para que os serviços reiniciem em caso de problemas
+Você precisa obrigar que o serviço "mysql" rode no node "dw4" após ser criado
+ > O primeiro passo para direcionar o deploy para este nó, é criar um label para ele, os labels são muito usados para identificar ambientes, tanto no Swarm quanto no Kubernetes por exemplo
+   > Para criar o label, no manager execute o comando "docker node update --label-add dc=db dw3"
+ > Agora edite o "docker-stack.yml" e adicione a seção de placement (alocação do serviço) no serviço mysql:
+   placement:
+     constraints:
+       - node.labels.dc == db
+Antes de executar o deploy, execute o mkdir proposto nos demais nós, já que não temos um share montado em todos os nós, lembrando que isso pode ser feito com o NFS por exemplo, ai neste caso você pode usar o ponto de montagem na configuração do yml na parte de volumes
+Agora execute os demais comandos até o final
+Valide os serviços com o comando ps do Docker Stack
+Entre no navegador com a url wordpressdemo.net e finalize a configuração do Wordpress
+Exclua a stack
