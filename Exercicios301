@@ -121,4 +121,12 @@ Exclua a stack
 Exercício 18:
 Obrigatório ler, opcional fazer (Precisa de conta na AWS): https://hackernoon.com/architecting-a-highly-available-and-scalable-wordpress-using-docker-swarm-traefik-glusterfs-a69186e9f0e
 
+>>>>>>>>>>>>>>>> Exercício relacionados a segurança
 
+Exercício 19:
+Execute o seguinte script na opção de Docker: https://github.com/docker/docker-bench-security
+Instale o WinSCP no Windows e transfira o log gerado após a execução, que consta na página do script
+
+Exercício 20:
+Execute a seguinte aplicação na opção "machine scanner demo": https://hub.docker.com/r/openscap/openscap
+Use o WinSCP para baixar o relatório para o Windows, abra e analize com algun navegador
