@@ -130,3 +130,6 @@ Instale o WinSCP no Windows e transfira o log gerado após a execução, que con
 Exercício 20:
 Execute a seguinte aplicação na opção "machine scanner demo": https://hub.docker.com/r/openscap/openscap
 Use o WinSCP para baixar o relatório para o Windows, abra e analize com algun navegador
+
+Desafio 5 (opcional): https://code-maze.com/ci-jenkins-docker/
+
