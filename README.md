@@ -419,6 +419,12 @@ Documentação do Swarm:
 
 #### Para mais informações e conceitos avançados do curso, acesse os seguintes links:
 
+Boas práticas no Uso de containers
+- https://blog.umbler.com/br/containers-4-boas-praticas/
+
+Dicas e boas práticas de segurança em Containers
+- https://medium.com/linux-world-open-source/dicas-e-boas-pr%C3%A1ticas-de-seguran%C3%A7a-em-containers-2957ae5cd276
+
 Guide linux e livro completo de docker (Usado como referência no curso)
 - https://github.com/cursodocker2021/curso/blob/main/Referencia
 
