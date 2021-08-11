@@ -433,3 +433,6 @@ Guide linux e livro completo de docker (Usado como referência no curso)
 
 Referência de comandos mais usados no Docker
 - https://github.com/cursodocker2021/curso/blob/main/Comandos
+
+Lista de ferramentas (Referência para o dia-a-dia usando Docker)
+- https://github.com/veggiemonk/awesome-docker
