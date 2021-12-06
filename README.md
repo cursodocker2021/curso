@@ -1,4 +1,6 @@
-# Curso de Docker
+# Curso de Docker Sisnema
+
+![](img/sisnema.jpg)
 
 #### O que é Docker?
 
