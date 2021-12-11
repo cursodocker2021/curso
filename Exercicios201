@@ -160,7 +160,7 @@ Agora efetue o build da imagem com o Dockerfile que você criou atribuindo o nom
 Liste as imagens Docker
 Faça um teste subindo um container em background em modo interativo, mapeando a porta 80 interna e externa com a imagem que você criou
 Teste seu site no navegador
-Agora pare e exclua o container e a imagem
+Agora pare e exclua o container
 
 Agora vamos enviar sua imagem customizada para seu repositório no Dockerhub:
 Entre no Dockerhub e crie um repositório público chamado "siteapache"
