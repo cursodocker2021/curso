@@ -29,7 +29,7 @@ Dica: Use o GIT como no exerício 7
 Desafio 2: https://github.com/docker/awesome-compose#samples-of-docker-compose-applications-with-multiple-integrated-services
 Escolha 3 ou mais labs da seção "Samples of Docker Compose applications with multiple integrated services" para executar, continue usando o GIT como nos exercícios anteriores
 
-Exercício 10: https://deployeveryday.com/2016/09/28/composing-docker-environments-scale.html
+Exercício 10: https://brianchristner.io/how-to-scale-a-docker-container-with-docker-compose/
 ATENÇÃO: Leia com atenção todo o artigo e vá executando o lab proposto, este conceito é muito importante!
 
 >>>>>>>>>>>>>>>> Exercício de Docker machine
