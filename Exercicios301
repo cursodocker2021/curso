@@ -81,21 +81,21 @@ docker service ls
 docker service ps <nome_dos_servicos_do_comando_anterior>
 Entre na aplicação pelo navegador
 
-Exercício 13:
+Exercício 14:
 Implemente o Portainer para auxiliar no uso do Swarm: https://documentation.portainer.io/v2.0/deploy/ceinstallswarm/
 Entre no sistema e explore os recursos relacionados ao cluster e demais que antes não estavam disponíveis quando utilizamos da primeira vez
 
-Exercício 14: https://bday2021.play-with-docker.com/voting-app/
+Exercício 15: https://bday2021.play-with-docker.com/voting-app/
 
-Exercício 15: 
+Exercício 16: 
 Execute e leia atentamente o exercício: https://doc.traefik.io/traefik/v1.7/user-guide/swarm-mode/
 
-Exercício 16:
+Exercício 17:
 Execute toda a trilha de exercícios lendo com atenção as explicações para consolidar o conhecimento: https://www.katacoda.com/courses/docker-orchestration
 
 Desafio 3 (Opcional/avançado): https://dockerswarm.rocks/
 
-Exercício 17:
+Exercício 18:
 Crie um registry local, a imagem e efetue o deploy do serviço
 https://docs.docker.com/engine/swarm/stack-deploy/
 
@@ -119,16 +119,16 @@ Valide os serviços com o comando ps do Docker Stack
 Entre no navegador com a url wordpressdemo.net e finalize a configuração do Wordpress
 Exclua a stack
 
-Exercício 18:
+Exercício 19:
 Obrigatório ler, opcional fazer (Precisa de conta na AWS): https://hackernoon.com/architecting-a-highly-available-and-scalable-wordpress-using-docker-swarm-traefik-glusterfs-a69186e9f0e
 
 >>>>>>>>>>>>>>>> Exercício relacionados a segurança
 
-Exercício 19:
+Exercício 20:
 Execute o seguinte script na opção de Docker: https://github.com/docker/docker-bench-security
 Instale o WinSCP no Windows e transfira o log gerado após a execução, que consta na página do script
 
-Exercício 20:
+Exercício 21:
 Execute a seguinte aplicação na opção "machine scanner demo": https://hub.docker.com/r/openscap/openscap
 Use o WinSCP para baixar o relatório para o Windows, abra e analize com algun navegador
 
