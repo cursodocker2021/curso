@@ -79,7 +79,7 @@ docker stack ls
 docker stack services vote
 docker service ls
 docker service ps <nome_dos_servicos_do_comando_anterior>
-Entre na aplicação pelo navegador
+Entre na aplicação pelo navegador, o IP usado será de um dos managers para acesso, já que eles efetuam o papel de load-balancer.
 
 Exercício 14:
 Implemente o Portainer para auxiliar no uso do Swarm: https://documentation.portainer.io/v2.0/deploy/ceinstallswarm/
