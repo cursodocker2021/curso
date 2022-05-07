@@ -119,7 +119,9 @@ nodejs -v
 Execute os passos do laboratório: https://www.digitalocean.com/community/tutorials/como-construir-uma-aplicacao-node-js-com-o-docker-pt
 
 Exercício 7:
-Execute a partir do "Second way": https://codefresh.io/docker-tutorial/create-docker-images-for-java/
+Ler o atigo a partir do "First way: Package-only Build": https://codefresh.io/docker-tutorial/create-docker-images-for-java/
+Clonar o repositório https://github.com/annabaker/docker-with-java-demos
+Executar a partir do "Second way: Normal Docker Build"
 
 >>>>>>>>>>>>>>>> Exercício de subida de imagem para o Dockerhub
 
