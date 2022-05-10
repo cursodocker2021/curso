@@ -12,9 +12,6 @@ Exercício 4: https://docs.docker.com/samples/django/
 
 Exercício 5: https://grafana.com/grafana/dashboards/893
 
-Desafio 1: Sistema Node.js fazendo uso de mensageria (RabbitMQ)
-https://geshan.com.np/blog/2021/07/rabbitmq-docker-nodejs/
-
 Exercício 6:
 Conheça/suba outra opção de interface gráfica (Bem menos gráfica que o Portainer =): https://github.com/jesseduffield/lazydocker#docker
 
@@ -26,15 +23,15 @@ Dica: Use o GIT como no exerício 7
 Exercício 9: https://github.com/hellokoding/dockercompose-springboot-mongodb-nginx
 Dica: Use o GIT como no exerício 7
 
-Desafio 2: https://github.com/docker/awesome-compose#samples-of-docker-compose-applications-with-multiple-integrated-services
+Desafio 1: https://github.com/docker/awesome-compose#samples-of-docker-compose-applications-with-multiple-integrated-services
 Escolha 3 ou mais labs da seção "Samples of Docker Compose applications with multiple integrated services" para executar, continue usando o GIT como nos exercícios anteriores
 
-Exercício 10: https://doc.traefik.io/traefik/getting-started/quick-start/
+Desafio 2: https://doc.traefik.io/traefik/getting-started/quick-start/
 ATENÇÃO: Leia com atenção todo o artigo e vá executando o lab proposto, este conceito é muito importante!
 
 >>>>>>>>>>>>>>>> Exercício de Docker machine
 
-Exercício 11:
+Exercício 10:
 Instale o Docker machine no seu host
 Crie uma máquina com Docker machine chamada "mysqlsrv"
 Entre via SSH nesta VM
@@ -50,7 +47,7 @@ docker run -d --name mysql-wordpress \
 mysql:5.7
 Saia da VM
 
-Exercício 12:
+Exercício 11:
 Crie uma máquina com Docker machine chamada "wordpress"
 Pegue o IP da VM "mysqlsrv"
 Entre via SSH nesta VM via docker-machine
@@ -67,7 +64,7 @@ Apague as duas VMs
 
 >>>>>>>>>>>>>>>> Exercício de Docker Swarm + Docker Stack
 
-Exercício 13:
+Exercício 12:
 Crie três VMs com Docker Machine usando o driver "hyperv" com o nome dw1, dw2 e dw3
 Entre na máquina dw1 e inicie o swarm: docker swarm init --advertise-addr [ip]
 Copie o comando+token que será gerado na máquina dw1
@@ -81,21 +78,21 @@ docker service ls
 docker service ps <nome_dos_servicos_do_comando_anterior>
 Entre na aplicação pelo navegador, o IP usado será de um dos managers para acesso, já que eles efetuam o papel de load-balancer.
 
-Exercício 14:
+Exercício 13:
 Implemente o Portainer para auxiliar no uso do Swarm: https://documentation.portainer.io/v2.0/deploy/ceinstallswarm/
 Entre no sistema e explore os recursos relacionados ao cluster e demais que antes não estavam disponíveis quando utilizamos da primeira vez
 
-Exercício 15: https://bday2021.play-with-docker.com/voting-app/
+Exercício 14: https://bday2021.play-with-docker.com/voting-app/
 
-Exercício 16: 
+Exercício 15: 
 Execute e leia atentamente o exercício: https://doc.traefik.io/traefik/v1.7/user-guide/swarm-mode/
 
-Exercício 17:
+Exercício 16:
 Execute toda a trilha de exercícios lendo com atenção as explicações para consolidar o conhecimento: https://www.katacoda.com/courses/docker-orchestration
 
 Desafio 3 (Opcional/avançado): https://dockerswarm.rocks/
 
-Exercício 18:
+Exercício 17:
 Crie um registry local, a imagem e efetue o deploy do serviço
 https://docs.docker.com/engine/swarm/stack-deploy/
 
@@ -119,16 +116,16 @@ Valide os serviços com o comando ps do Docker Stack
 Entre no navegador com a url wordpressdemo.net e finalize a configuração do Wordpress
 Exclua a stack
 
-Exercício 19:
+Exercício 18:
 Obrigatório ler, opcional fazer (Precisa de conta na AWS): https://hackernoon.com/architecting-a-highly-available-and-scalable-wordpress-using-docker-swarm-traefik-glusterfs-a69186e9f0e
 
 >>>>>>>>>>>>>>>> Exercício relacionados a segurança
 
-Exercício 20:
+Exercício 19:
 Execute o seguinte script na opção de Docker: https://github.com/docker/docker-bench-security
 Instale o WinSCP no Windows e transfira o log gerado após a execução, que consta na página do script
 
-Exercício 21:
+Exercício 20:
 Execute a seguinte aplicação na opção "machine scanner demo": https://hub.docker.com/r/openscap/openscap
 Use o WinSCP para baixar o relatório para o Windows, abra e analize com algun navegador
 
