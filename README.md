@@ -360,34 +360,31 @@ O Docker compose é uma ferramenta para definir e gerenciar aplicações docker 
 Exemplo de um arquivo compose:
 
 ````
-version: '3.8'
-
-networks:
-  web_network:
-    driver: overlay
-
-volumes:
-  site_conf:
+version: '3.7'
 
 services:
-  web-server:
-    image: httpd:latest
-    ports: "80:80"
-    deploy:
-      placement:
-        constraints:
-          - "node.role==worker"
-      mode: replicated
-      replicas: 2
-      resource:
-        cpus: "0.50"
-        memory: 256M
-    restart: always
-    networks:
-      - web_network
+  mysqlsrv:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "Senha123"
+      MYSQL_DATABASE: "testedb"
+    ports:
+      - "3306:3306"
     volumes:
-      - /dir/site/html:/var/www/html
-      - site_conf:/etc/httpd
+      - /data/mysql-C:/var/lib/mysql
+    networks:
+      - minha-rede
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - minha-rede
+
+networks: 
+  minha-rede:
+    driver: bridge
 
 ````
 Para instalar o Docker compose utilize a documentação oficial: https://docs.docker.com/compose/install/
