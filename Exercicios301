@@ -33,8 +33,10 @@ ATENÇÃO: Leia com atenção os artigos e vá executando os labs propostos, est
 
 >>>>>>>>>>>>>>>> Exercício de Docker machine
 
+Instalar o GITBASH e o Docker machine no Windows (Pois ele irá interagir com o hypervisor, neste caso o Hyper-V):
+https://github.com/docker/machine/releases
+
 Exercício 10:
-Instale o Docker machine no seu host
 Crie uma máquina com Docker machine chamada "mysqlsrv"
 Entre via SSH nesta VM
 Crie o diretório de dados do MySQL: sudo mkdir -p /docker/mysql/wordpress/data
