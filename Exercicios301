@@ -94,13 +94,11 @@ Execute e leia atentamente o exercício: https://doc.traefik.io/traefik/v1.7/use
 Exercício 16:
 Execute toda a trilha de exercícios lendo com atenção as explicações para consolidar o conhecimento: https://www.katacoda.com/courses/docker-orchestration
 
-Desafio 3 (Opcional/avançado): https://dockerswarm.rocks/
-
 Exercício 17:
 Crie um registry local, a imagem e efetue o deploy do serviço
 https://docs.docker.com/engine/swarm/stack-deploy/
 
-Desafio 4:
+Desafio 3:
 Crie uma nova VM com o Docker Machine, chamada "dw4" e ingresse ela no cluster
 Entre no manager e mude para o modo root
 Execute o comando "docker node update --help" e aprenda a configurar o modo drain no node "dw3", para que ele não execute containers
