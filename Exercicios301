@@ -26,8 +26,10 @@ Dica: Use o GIT como no exerício 7
 Desafio 1: https://github.com/docker/awesome-compose#samples-of-docker-compose-applications-with-multiple-integrated-services
 Escolha 3 ou mais labs da seção "Samples of Docker Compose applications with multiple integrated services" para executar, continue usando o GIT como nos exercícios anteriores
 
-Desafio 2: https://doc.traefik.io/traefik/getting-started/quick-start/
-ATENÇÃO: Leia com atenção todo o artigo e vá executando o lab proposto, este conceito é muito importante!
+Desafio 2: 
+Load balancer: https://doc.traefik.io/traefik/getting-started/quick-start/
+Proxy reverso: https://medium.com/predictly-on-tech/using-traefik-in-docker-compose-abc1c327d7f7
+ATENÇÃO: Leia com atenção os artigos e vá executando os labs propostos, estes conceitos são muito importantes!
 
 >>>>>>>>>>>>>>>> Exercício de Docker machine
 
