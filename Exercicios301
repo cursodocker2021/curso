@@ -119,7 +119,7 @@ Entre no navegador com a url wordpressdemo.net e finalize a configuração do Wo
 Exclua a stack
 
 Exercício 18:
-Obrigatório ler, opcional fazer (Precisa de conta na AWS): https://hackernoon.com/architecting-a-highly-available-and-scalable-wordpress-using-docker-swarm-traefik-glusterfs-a69186e9f0e
+Recomendado ler, opcional fazer (Precisa de conta na AWS): https://hackernoon.com/architecting-a-highly-available-and-scalable-wordpress-using-docker-swarm-traefik-glusterfs-a69186e9f0e
 
 >>>>>>>>>>>>>>>> Exercício relacionados a segurança
 
@@ -131,5 +131,5 @@ Exercício 20:
 Execute a seguinte aplicação na opção "machine scanner demo": https://hub.docker.com/r/openscap/openscap
 Use o WinSCP para baixar o relatório para o Windows, abra e analize com algun navegador
 
-Desafio 5: Obrigatório ler, opcional fazer https://code-maze.com/ci-jenkins-docker/
+Desafio 5: Recomendado ler, opcional fazer https://code-maze.com/ci-jenkins-docker/
 
