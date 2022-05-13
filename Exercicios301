@@ -131,5 +131,5 @@ Exercício 20:
 Execute a seguinte aplicação na opção "machine scanner demo": https://hub.docker.com/r/openscap/openscap
 Use o WinSCP para baixar o relatório para o Windows, abra e analize com algun navegador
 
-Desafio 5 (opcional): https://code-maze.com/ci-jenkins-docker/
+Desafio 5: Obrigatório ler, opcional fazer https://code-maze.com/ci-jenkins-docker/
 
